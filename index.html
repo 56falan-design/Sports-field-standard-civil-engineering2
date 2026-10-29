@@ -113,9 +113,9 @@ button{font:inherit;color:inherit}
 
 /* sport grid */
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.sp{display:flex;flex-direction:column;border:1px solid var(--ink);background:var(--paper);text-decoration:none;color:var(--ink);position:relative;transition:transform .12s, box-shadow .12s;min-height:208px}
+.sp{display:flex;flex-direction:column;border:1px solid var(--ink);background:var(--paper);text-decoration:none;color:var(--ink);position:relative;transition:transform .12s, box-shadow .12s;min-height:258px}
 .sp:hover{transform:translate(-3px,-3px);box-shadow:3px 3px 0 var(--violet),6px 6px 0 var(--ink)}
-.sp .art{height:118px;border-bottom:1px solid var(--ink);display:grid;place-items:center;position:relative;overflow:hidden;
+.sp .art{height:168px;border-bottom:1px solid var(--ink);display:grid;place-items:center;position:relative;overflow:hidden;
   background:repeating-linear-gradient(0deg,transparent 0 13px,var(--line) 13px 14px),repeating-linear-gradient(90deg,transparent 0 13px,var(--line) 13px 14px),var(--bg)}
 .sp .emo{font-size:calc(56px * var(--z));line-height:1;filter:saturate(1.05);transition:transform .2s}
 
@@ -275,7 +275,7 @@ mark{background:var(--lime);color:#0b0b0c;padding:0 2px}
   #sports .sec-h{padding:0!important}
   .crumb{display:none!important}
   .sp .m{flex-wrap:wrap}
-  .sp .emo{font-size:calc(44px * var(--z))}.sp .art{height:96px}.sp{min-height:180px}
+  .sp .emo{font-size:calc(44px * var(--z))}.sp .art{height:140px}.sp{min-height:224px}
   .prin{grid-template-columns:1fr 1fr}.pr + .pr{padding-left:0}
   .trio{grid-template-columns:1fr}.trio > div{border-right:0;border-bottom:1px solid var(--line);padding:24px 16px}
   .foot{grid-template-columns:1fr 1fr;padding:24px 16px}
@@ -327,11 +327,11 @@ mark{background:var(--lime);color:#0b0b0c;padding:0 2px}
 .sp.live .hint{opacity:1}
 .sp.live .art{background-color:var(--paper)}
 .credit{font-size:calc(14px * var(--z));margin:12px 0 0;font-weight:500;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}.credit .mono{font-size:calc(11.5px * var(--z))}
-.live{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px}
-.live > div{border:1px solid var(--ink);padding:8px 12px}
-.live b{display:block;font-family:var(--head);font-size:calc(30px * var(--z));line-height:1.1;font-weight:400}
-.live div:first-child b{color:var(--violet)}
-.live span{font-size:calc(12px * var(--z));color:var(--muted)}
+.livebox{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px}
+.livebox > div{border:1px solid var(--ink);padding:8px 12px}
+.livebox b{display:block;font-family:var(--head);font-size:calc(30px * var(--z));line-height:1.1;font-weight:400}
+.livebox div:first-child b{color:var(--violet)}
+.livebox span{font-size:calc(12px * var(--z));color:var(--muted)}
 .rc{color:var(--violet)}
 </style>
 <script>(function(){try{var t=localStorage.getItem('cy.theme');if(t)document.documentElement.dataset.theme=t;var z=localStorage.getItem('cy.z');if(z)document.documentElement.style.setProperty('--z',z)}catch(e){}})();</script>
@@ -6601,8 +6601,8 @@ window.VOX = (function(){
       const u = (now - t0) / 900;
       for (const v of items) { const k = reduce ? 1 : Math.max(0, Math.min(1, (u - v.d) / .55)); const e = 1 - Math.pow(1 - k, 3);
         v.p = [v.b[0], v.b[1], v.b[2] + (1 - e) * 9]; v.al = Math.min(1, k * 1.6); }
-      const ext = b.ex * 1.414 + 1, sc = Math.min(w * .7 / ext, h * .62 / (ext * .55 + b.mz + 1.2));
-      drawItems(c2, w, h, items, sc, .78 + (reduce ? 0 : (now - t0) / 4200), .56);
+      const ext = b.ex * 1.414 + 1, sc = Math.min(w * .8 / ext, h * .74 / (ext * .55 + b.mz + 1.2));
+      drawItems(c2, w, h, items, sc, .78 + (reduce ? 0 : (now - t0) / 4200), .55);
     };
     id = requestAnimationFrame(fr);
     return {stop(){ alive = false; cancelAnimationFrame(id); }};
@@ -6648,7 +6648,7 @@ const STAT = (() => {
     document.querySelectorAll('[data-stat]').forEach(e => { e.textContent = fmt(st[e.dataset.stat]); });
     document.querySelectorAll('[data-rc]').forEach(e => { const n = st.ch[e.dataset.rc] || 0; e.textContent = n ? ' · อ่าน ' + fmt(n) : ''; });
     document.querySelectorAll('[data-rc-n]').forEach(e => { e.textContent = fmt(st.ch[e.dataset.rcN] || 0); });
-    document.querySelectorAll('.live,.vstat,.rchip').forEach(e => { e.hidden = false; });
+    document.querySelectorAll('.livebox,.vstat,.rchip').forEach(e => { e.hidden = false; });
   }
   return {
     paint,
@@ -6772,7 +6772,7 @@ function renderHome(jump){
   <section class="trio">
     <div><span class="lbl vi">/05</span><h3>เริ่มจาก<br>ตรงไหนดี</h3><p>อ่านบทที่ 1–2 ก่อน เพื่อเข้าใจลำดับชั้นของข้อกำหนดและหลักวิศวกรรมที่ทุกสนามใช้ร่วมกัน แล้วค่อยเลือกกีฬา</p><a class="bk" href="#/c1">บทที่ 1 ${ARW}</a></div>
     <div><span class="lbl vi">/06</span><h3>สถานะเล่ม</h3>
-      <div class="live" hidden><div><b data-stat="views">0</b><span>ครั้งที่เข้าชม</span></div><div><b data-stat="reads">0</b><span>ครั้งที่เปิดอ่าน</span></div></div>
+      <div class="livebox" hidden><div><b data-stat="views">0</b><span>ครั้งที่เข้าชม</span></div><div><b data-stat="reads">0</b><span>ครั้งที่เปิดอ่าน</span></div></div>
       <div class="bars">
         <span>SPORTS</span><span class="bar"><i style="width:${sports.length / mx * 100}%"></i></span><span>${sports.length}</span>
         <span>3D_MODELS</span><span class="bar"><i style="width:${T.widgets / mx * 100}%"></i></span><span>${T.widgets}</span>
