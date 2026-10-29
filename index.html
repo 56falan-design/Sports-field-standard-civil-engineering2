@@ -327,6 +327,12 @@ mark{background:var(--lime);color:#0b0b0c;padding:0 2px}
 .sp.live .hint{opacity:1}
 .sp.live .art{background-color:var(--paper)}
 .credit{font-size:calc(14px * var(--z));margin:12px 0 0;font-weight:500;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}.credit .mono{font-size:calc(11.5px * var(--z))}
+.live{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px}
+.live > div{border:1px solid var(--ink);padding:8px 12px}
+.live b{display:block;font-family:var(--head);font-size:calc(30px * var(--z));line-height:1.1;font-weight:400}
+.live div:first-child b{color:var(--violet)}
+.live span{font-size:calc(12px * var(--z));color:var(--muted)}
+.rc{color:var(--violet)}
 </style>
 <script>(function(){try{var t=localStorage.getItem('cy.theme');if(t)document.documentElement.dataset.theme=t;var z=localStorage.getItem('cy.z');if(z)document.documentElement.style.setProperty('--z',z)}catch(e){}})();</script>
 </head>
@@ -6628,6 +6634,28 @@ const IDX = JSON.parse(document.getElementById('search-data').textContent);
 const $ = s => document.querySelector(s);
 const main = $('#main'), progress = $('#progress');
 const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+// ---- visit / read counters (needs /api on Vercel; silently off elsewhere) ----
+const STAT = (() => {
+  const st = {ok: false, views: 0, reads: 0, ch: {}};
+  const ss = {get(k){try{return sessionStorage.getItem(k)}catch(e){return null}}, set(k,v){try{sessionStorage.setItem(k,v)}catch(e){}}};
+  const online = /^https?:$/.test(location.protocol);
+  const fmt = n => Number(n || 0).toLocaleString('th-TH');
+  const post = body => fetch('/api/hit', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(body), keepalive: true}).catch(() => {});
+  let t = 0;
+  const load = () => { clearTimeout(t); t = setTimeout(() => fetch('/api/stats', {cache: 'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if (!j || typeof j.views !== 'number') return; Object.assign(st, j, {ok: true}); paint(); }).catch(() => {}), 400); };
+  function paint(){
+    if (!st.ok) return;
+    document.querySelectorAll('[data-stat]').forEach(e => { e.textContent = fmt(st[e.dataset.stat]); });
+    document.querySelectorAll('[data-rc]').forEach(e => { const n = st.ch[e.dataset.rc] || 0; e.textContent = n ? ' · อ่าน ' + fmt(n) : ''; });
+    document.querySelectorAll('[data-rc-n]').forEach(e => { e.textContent = fmt(st.ch[e.dataset.rcN] || 0); });
+    document.querySelectorAll('.live,.vstat,.rchip').forEach(e => { e.hidden = false; });
+  }
+  return {
+    paint,
+    view(){ if (!online) return; if (!ss.get('cy.vis')) { ss.set('cy.vis', '1'); post({type: 'view'}).then(load); } else load(); },
+    read(cid){ if (!online) return; const k = 'cy.r.' + cid; if (!ss.get(k)) { ss.set(k, '1'); st.ch[cid] = (st.ch[cid] || 0) + 1; st.reads++; post({type: 'read', ch: cid}).then(load); } paint(); }
+  };
+})();
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pad = n => String(n).padStart(2, '0');
 const ARW = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12 12 4M5 4h7v7"/></svg>';
@@ -6701,7 +6729,7 @@ const FEDS = [
 function spCard(c){
   const m = meta(c);
   return `<a class="sp" href="#/${c.id}" data-num="${c.num}"><div class="art"><span class="no">/${pad(c.num)}</span><span class="px"><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="emo">${m.e}</span><canvas class="mini" aria-hidden="true"></canvas><span class="hint">3D</span></div>
-    <div class="bd"><span class="t">${esc(c.short.replace(/^สนาม/, ''))}</span><span class="m"><span>${m.code}${c.widgets ? ' · 3D×' + c.widgets : ''}</span>${ARW}</span></div></a>`;
+    <div class="bd"><span class="t">${esc(c.short.replace(/^สนาม/, ''))}</span><span class="m"><span>${m.code}${c.widgets ? ' · 3D×' + c.widgets : ''}<span class="rc" data-rc="${c.id}"></span></span>${ARW}</span></div></a>`;
 }
 
 function renderHome(jump){
@@ -6744,6 +6772,7 @@ function renderHome(jump){
   <section class="trio">
     <div><span class="lbl vi">/05</span><h3>เริ่มจาก<br>ตรงไหนดี</h3><p>อ่านบทที่ 1–2 ก่อน เพื่อเข้าใจลำดับชั้นของข้อกำหนดและหลักวิศวกรรมที่ทุกสนามใช้ร่วมกัน แล้วค่อยเลือกกีฬา</p><a class="bk" href="#/c1">บทที่ 1 ${ARW}</a></div>
     <div><span class="lbl vi">/06</span><h3>สถานะเล่ม</h3>
+      <div class="live" hidden><div><b data-stat="views">0</b><span>ครั้งที่เข้าชม</span></div><div><b data-stat="reads">0</b><span>ครั้งที่เปิดอ่าน</span></div></div>
       <div class="bars">
         <span>SPORTS</span><span class="bar"><i style="width:${sports.length / mx * 100}%"></i></span><span>${sports.length}</span>
         <span>3D_MODELS</span><span class="bar"><i style="width:${T.widgets / mx * 100}%"></i></span><span>${T.widgets}</span>
@@ -6783,6 +6812,7 @@ function renderHome(jump){
   });
   setCrumb(null);
   document.title = D.title;
+  STAT.paint();
   if (jump) { const t = document.getElementById(jump); if (t) t.scrollIntoView(); } else scrollTo(0, 0);
 }
 
@@ -6794,7 +6824,7 @@ function footer(){
     <div class="fsports"><h4>กีฬา · ${sports.length} MODULES</h4><div class="cols">${sports.map(ln).join('')}</div></div>
     <div><h4>วิศวกรรม_ภาคผนวก</h4>${others.map(c => `<a href="#/${c.id}">${meta(c).e} ${esc(c.short)}</a>`).join('')}</div>
   </section>
-  <section class="status"><span><i class="dot"></i>Offline ready</span><a href="#/sports" data-jump="sports">&gt; เลือกกีฬา_</a><span class="rt"><span>CH: ${pad(D.chapters.filter(c => c.num).length)}</span><span>NODE: FIELD_01</span></span></section>`;
+  <section class="status"><span><i class="dot"></i>Offline ready</span><a href="#/sports" data-jump="sports">&gt; เลือกกีฬา_</a><span class="rt"><span>CH: ${pad(D.chapters.filter(c => c.num).length)}</span><span class="vstat" hidden>VISITS: <b data-stat="views">0</b></span><span>NODE: FIELD_01</span></span></section>`;
 }
 
 let io;
@@ -6810,7 +6840,7 @@ function renderChapter(cid, sid){
     <div class="ch-info">
       <span class="lbl vi">/${c.num ? pad(c.num) : '--'} · ${isSport(c) ? 'SPORT_MODULE' : 'DOC_MODULE'}</span>
       <h1 class="big">${esc(c.short)}</h1>
-      <div class="ch-meta">${c.num ? `<span class="chip v">${esc(lab(c))}</span>` : ''}${c.secs.length ? `<span class="chip">${c.secs.length} sections</span>` : ''}${c.tables ? `<span class="chip">${c.tables} tables</span>` : ''}${c.widgets ? `<span class="chip">3D × ${c.widgets}</span>` : ''}<span class="chip" id="rt"></span></div>
+      <div class="ch-meta">${c.num ? `<span class="chip v">${esc(lab(c))}</span>` : ''}${c.secs.length ? `<span class="chip">${c.secs.length} sections</span>` : ''}${c.tables ? `<span class="chip">${c.tables} tables</span>` : ''}${c.widgets ? `<span class="chip">3D × ${c.widgets}</span>` : ''}<span class="chip" id="rt"></span><span class="chip v rchip" hidden>อ่านแล้ว <b data-rc-n="${c.id}">0</b> ครั้ง</span></div>
       <div class="ch-actions"><a class="bk" href="#/sports" data-jump="sports">← เลือกกีฬาอื่น</a></div>
     </div>
   </section>
@@ -6835,6 +6865,7 @@ function renderChapter(cid, sid){
   setCrumb(c);
   document.title = m.e + ' ' + (c.num ? 'บทที่ ' + c.num + ' ' : '') + c.short;
   store.set('cy.last', cid);
+  STAT.read(cid);
   io && io.disconnect();
   io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { EBW.mount(e.target); io.unobserve(e.target); } }), {rootMargin: '600px 0px'});
   art.querySelectorAll('.widget').forEach(w => io.observe(w));
@@ -6920,6 +6951,7 @@ addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft' && current) { const p = D.chapters[i - 1]; location.hash = p ? '#/' + p.id : '#/'; }
 });
 route();
+STAT.view();
 })();
 </script>
 </body>
