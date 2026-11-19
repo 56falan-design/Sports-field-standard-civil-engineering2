@@ -7752,6 +7752,23 @@ function renderHome(jump){
     card.addEventListener('mouseenter', () => on(card)); card.addEventListener('mouseleave', off);
     card.addEventListener('focus', () => on(card)); card.addEventListener('blur', off);
   });
+  else {
+    // จอสัมผัส (มือถือ/แท็บเล็ต) ไม่มี hover: เล่นสนามจำลองของการ์ดที่อยู่กลางจอทีละใบ
+    // แตะการ์ดที่ยังไม่เล่นเพื่อดูสนามจำลองก่อน แตะซ้ำเพื่อเปิดบท
+    const cards = [...document.querySelectorAll('.sp[data-num]')];
+    cards.forEach(card => card.addEventListener('click', e => { if (miniCard !== card) { e.preventDefault(); on(card); } }));
+    let raf = 0;
+    const pick = () => {
+      raf = 0;
+      if (!cards.length || !cards[0].isConnected) { removeEventListener('scroll', onScroll); off(); return; }
+      const mid = innerHeight / 2; let best = null, bd = Infinity;
+      for (const c of cards) { const r = c.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) continue;
+        const d = Math.abs((r.top + r.bottom) / 2 - mid); if (d < bd) { bd = d; best = c; } }
+      if (best && bd < innerHeight * .3) on(best); else off();
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(pick); };
+    addEventListener('scroll', onScroll, {passive: true}); pick();
+  }
   let built = 0; const seen = new Set();
   VOX.start($('#voxc'), {
     onField(f){ const c = D.chapters.find(x => x.num === String(f.num)); seen.add(f.num);
