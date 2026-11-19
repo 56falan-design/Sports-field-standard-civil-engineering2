@@ -6552,11 +6552,24 @@ window.VOX = (function(){
     g.area(0, 0, 15, 4, '#d4c29c'); g.area(4.25, 0, 14.25, 4, C.sand); g.box(0, 0, 15, 4, C.line);
     g.seg(3.25, 2, 3.25, 2, '#d33b3b');
     return g.out(); }});
-  F.push({num:9, e:'🥅', code:'FUTSAL', k:['X_40.000','Y_20.000','Z_2.000'], b(){ const g = make(40, 20, 2); g.all('#3a74b0');
-    g.area(0, 0, 40, 20, '#cf975c'); g.box(0, 0, 40, 20, C.line); g.seg(20, 0, 20, 20, C.line); g.arc(20, 10, 3, 0, 7, C.line);
-    g.arc(0, 8.42, 6, -1.6, 0, C.line); g.arc(0, 11.58, 6, 0, 1.6, C.line); g.seg(6, 8.42, 6, 11.58, C.line);
-    g.arc(40, 8.42, 6, Math.PI, Math.PI + 1.6, C.line); g.arc(40, 11.58, 6, Math.PI - 1.6, Math.PI, C.line); g.seg(34, 8.42, 34, 11.58, C.line);
-    for (const x of [-.5, 40.5]) g.goal(x, 8.42, 11.58, 2.0);
+  F.push({num:9, e:'🥅', code:'FUTSAL', k:['X_40.000','Y_20.000','Z_2.000'], b(){
+    // สนาม 27 × 13 ช่องพอดีช่อง (จำนวนคี่ ให้เส้นกึ่งกลางอยู่คอลัมน์กลาง) ล้อมด้วยขอบ 1 ช่องทุกด้าน
+    // วงกลมกลาง r 3 m และเขตโทษ (ระยะ 6 m จากแนวระหว่างเสาประตู) วาดเป็นขอบของรูปทึบ
+    // เส้นจึงต่อเนื่องหนา 1 ช่องเสมอ ไม่ขาดเป็นจุดหรือกองเป็นก้อน
+    const NX = 27, NY = 13, g = make(NX + 2, NY + 2, 0, NX + 2), sx = NX / 40, sy = NY / 20;
+    const dSeg = (x, y, ax) => Math.hypot(x - ax, y < 8.42 ? y - 8.42 : y > 11.58 ? y - 11.58 : 0);
+    const at = (fi, fj) => [(fi + .5) / sx, (fj + .5) / sy];
+    const shapes = [(x, y) => Math.hypot(x - 20, y - 10) <= 3, (x, y) => dSeg(x, y, 0) <= 6, (x, y) => dSeg(x, y, 40) <= 6];
+    const edge = (fn, fi, fj) => fn(...at(fi, fj)) && [[1, 0], [-1, 0], [0, 1], [0, -1]].some(([a, b]) => !fn(...at(fi + a, fj + b)));
+    for (let i = 0; i < NX + 2; i++) for (let j = 0; j < NY + 2; j++) {
+      const fi = i - 1, fj = j - 1;
+      if (fi < 0 || fj < 0 || fi >= NX || fj >= NY) { g.set(i, j, '#3a74b0'); continue; }
+      const line = fi === 0 || fj === 0 || fi === NX - 1 || fj === NY - 1 || fi === (NX - 1) / 2 || shapes.some(fn => edge(fn, fi, fj));
+      g.set(i, j, line ? C.line : '#cf975c');
+    }
+    // ประตู 3 × 2 m หลังเส้นประตู: เสาสองต้น + คาน
+    const h = Math.max(1, Math.round(2 * Math.min(sx, sy))), jc = 1 + (NY - 1) / 2;
+    for (const i of [0, NX + 1]) for (let j = jc - 1; j <= jc + 1; j++) for (let z = (j === jc) ? h : 1; z <= h; z++) g.cell(i, j, z, '#eceee8');
     return g.out(); }});
   F.push({num:10, e:'🏉', code:'RUGBY', k:['X_100.000','Y_70.000','Z_3.400'], b(){ const g = make(144, 70, 3); g.all(C.gD);
     g.area(0, 0, 144, 70, stripes(C.g1, C.g2, 2)); g.box(0, 0, 144, 70, C.line);
