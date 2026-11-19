@@ -7661,7 +7661,7 @@ window.FD = (function(){
     if (!SHARED) { b.hidden = true; return; }
     const lk = (() => { try { return (JSON.parse(store.get('cy.liked')) || {})[SHARED.id]; } catch(e) { return 0; } })();
     b.hidden = false;
-    b.innerHTML = `<span>กำลังดู <b>“${esc(SHARED.title)}”</b> โดย ${esc(SHARED.author)} · ${esc(SHARED.sport)}</span>
+    b.innerHTML = `<span>กำลังดู <b>“${esc(SHARED.title)}”</b> · เผยแพร่โดย ${esc(SHARED.author)} · ${esc(SHARED.sport)}</span>
       ${SHARED.pub ? `<button class="dz-add tl-like${lk ? ' on' : ''}" data-act="likeShared">♥ ${SHARED.likes}</button>` : ''}
       <span class="dz-note" style="margin:0">แก้ต่อได้เลย งานจะบันทึกในเครื่องของคุณ</span>
       ${store.get(KEY + '.bak') ? '<button class="dz-add" data-act="backMine">กลับไปงานของฉัน</button>' : ''}`;
@@ -7779,7 +7779,7 @@ window.FD = (function(){
       <input type="file" id="dzFile" accept="application/json,.json" hidden>
       <div class="dz-imp" id="dzImp" hidden><label for="dzImpText">วางข้อมูลงานที่คัดลอกไว้ หรือเลือกไฟล์ .json</label><textarea id="dzImpText" rows="3" placeholder='{"sport":"football", ...}'></textarea>
         <div class="dz-btns"><button class="bk vio" data-act="impText">นำเข้า</button><button class="bk ghost" data-act="impFile">เลือกไฟล์ .json</button></div></div>
-      <div class="dz-imp" id="dzShare" hidden><div class="dz-g"><label class="dz-f"><span>ชื่องาน</span><input type="text" id="dzShTitle" maxlength="60"></label><label class="dz-f"><span>ชื่อผู้ออกแบบ</span><input type="text" id="dzShAuthor" maxlength="40" placeholder="ไม่ระบุก็ได้"></label>
+      <div class="dz-imp" id="dzShare" hidden><div class="dz-g"><label class="dz-f"><span>ชื่องาน</span><input type="text" id="dzShTitle" maxlength="60"></label><label class="dz-f"><span>ชื่อผู้เผยแพร่<em>ไม่บังคับ</em></span><input type="text" id="dzShAuthor" maxlength="40" placeholder="เว้นว่าง = ไม่ระบุชื่อ"></label>
         <label class="dz-chk full"><input type="checkbox" id="dzShPub"> เผยแพร่ในแกลเลอรีให้ทุกคนเห็น (ถ้าไม่ติ๊ก จะเปิดได้เฉพาะคนที่มีลิงก์)</label></div>
         <div class="dz-btns"><button class="bk vio" data-act="shareGo">สร้างลิงก์</button><a class="bk ghost" href="#/gallery">ไปแกลเลอรี</a></div><div id="dzShOut"></div></div>
       <p class="dz-msg" id="dzMsg" role="status" hidden></p></section>
@@ -7859,7 +7859,7 @@ window.TL = (function(){
     const card = (it, own) => {
       const lk = liked()[it.id];
       return `<div class="tl-gc"><a class="tl-th" href="#/d/${it.id}" aria-label="เปิด ${esc(it.title)}">${FD.thumb(it.design) || '<span>ไม่มีภาพตัวอย่าง</span>'}</a>
-        <div class="tl-gb"><b>${esc(it.title)}</b><span>${esc(it.author)} · ${esc(it.sport)}</span><small>${new Date(it.created).toLocaleDateString('th-TH', {day:'numeric', month:'short', year:'2-digit'})}</small></div>
+        <div class="tl-gb"><b>${esc(it.title)}</b><span>โดย ${esc(it.author)} · ${esc(it.sport)}</span><small>${new Date(it.created).toLocaleDateString('th-TH', {day:'numeric', month:'short', year:'2-digit'})}</small></div>
         <div class="tl-ga">${own ? `<label class="dz-chk"><input type="checkbox" data-pub="${it.id}"${it.pub ? ' checked' : ''}> เผยแพร่</label><button class="dz-add" data-copy="${it.id}">คัดลอกลิงก์</button><button class="dz-add" data-del="${it.id}">ลบ</button>`
           : `<button class="tl-like${lk ? ' on' : ''}" data-like="${it.id}" aria-label="ถูกใจ">♥ <span>${it.likes}</span></button><a class="dz-add tl-open" href="#/d/${it.id}">เปิด</a>`}</div></div>`;
     };
