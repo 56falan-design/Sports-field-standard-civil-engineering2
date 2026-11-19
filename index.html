@@ -7756,11 +7756,18 @@ function renderHome(jump){
     // จอสัมผัส (มือถือ/แท็บเล็ต) ไม่มี hover: เล่นสนามจำลองของการ์ดที่อยู่กลางจอทีละใบ
     // แตะการ์ดที่ยังไม่เล่นเพื่อดูสนามจำลองก่อน แตะซ้ำเพื่อเปิดบท
     const cards = [...document.querySelectorAll('.sp[data-num]')];
-    cards.forEach(card => card.addEventListener('click', e => { if (miniCard !== card) { e.preventDefault(); on(card); } }));
-    let raf = 0;
+    // ไอแพดที่ต่อเมาส์/แทร็กแพดยังนับเป็นจอสัมผัส: เมื่อมีตัวชี้ ให้ตามตัวชี้แทนการเลือกการ์ดกลางจอ
+    let pointer = false, raf = 0;
+    cards.forEach(card => {
+      card.addEventListener('click', e => { if (miniCard !== card) { e.preventDefault(); on(card); } });
+      card.addEventListener('pointerenter', e => { if (e.pointerType === 'touch') return; pointer = true; on(card); });
+      card.addEventListener('pointerleave', e => { if (e.pointerType !== 'touch' && miniCard === card) off(); });
+      card.addEventListener('pointerdown', e => { if (e.pointerType === 'touch') pointer = false; });
+    });
     const pick = () => {
       raf = 0;
       if (!cards.length || !cards[0].isConnected) { removeEventListener('scroll', onScroll); off(); return; }
+      if (pointer) return;
       const mid = innerHeight / 2; let best = null, bd = Infinity;
       for (const c of cards) { const r = c.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) continue;
         const d = Math.abs((r.top + r.bottom) / 2 - mid); if (d < bd) { bd = d; best = c; } }
