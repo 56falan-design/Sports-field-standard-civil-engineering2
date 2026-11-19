@@ -460,6 +460,115 @@ mark{background:var(--lime);color:#0b0b0c;padding:0 2px}
 .dz-rbg h4{margin:0 0 6px;font-family:var(--mono);font-size:calc(11.5px * var(--z));letter-spacing:.05em;color:var(--violet)}
 .dz-rn{font-family:var(--mono);color:var(--muted);font-weight:500}
 .dz-checks .text .t{border:1px dashed var(--line);color:var(--muted)}
+
+/* tools: hub, gallery, quiz, inspection, site plan, calculators, english */
+.tl-hub{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0;border-bottom:1px solid var(--line)}
+.tl-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:22px 24px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;min-width:0}
+.tl-card:hover{background:var(--violet-soft)}
+.tl-card b{font-family:"Kanit",var(--body);font-weight:800;font-size:calc(21px * var(--z));line-height:1.25}
+.tl-card span:not(.lbl){font-size:calc(13.5px * var(--z));color:var(--ink-2);line-height:1.6}
+.tl-card i{position:absolute;right:16px;top:18px;color:var(--violet)}
+.tl-hub-en{border:1px solid var(--line);border-bottom:0}
+.tl-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:14px 56px;border-bottom:1px solid var(--line)}
+.tl-tabs{display:flex;border:1px solid var(--line)}
+.tl-tabs button{height:36px;padding:0 14px;border:0;border-right:1px solid var(--line);background:none;cursor:pointer;font-size:calc(13px * var(--z))}
+.tl-tabs button:last-child{border-right:0}
+.tl-tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.tl-inl{display:flex;align-items:center;gap:8px;font-size:calc(13px * var(--z));margin-left:auto}
+.tl-inl select{height:36px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:0 8px;font-family:var(--mono);max-width:200px}
+.tl-bar .bk{height:36px}
+.tl-gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;padding:20px 56px 28px}
+.tl-gc{border:1px solid var(--line);display:flex;flex-direction:column;min-width:0;background:var(--paper)}
+.tl-th{display:block;aspect-ratio:16/10;max-width:100%;overflow:hidden;border-bottom:1px solid var(--line);background:var(--bg)}
+.tl-th .dz-svg{border:0;width:100%;height:100%;object-fit:contain}
+.tl-th span{display:grid;place-items:center;height:100%;color:var(--muted);font-size:calc(12px * var(--z))}
+.tl-gb{padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.tl-gb b{font-size:calc(15px * var(--z));overflow-wrap:anywhere}
+.tl-gb span{font-size:calc(12.5px * var(--z));color:var(--ink-2)}
+.tl-gb small{font-family:var(--mono);font-size:calc(11px * var(--z));color:var(--faint)}
+.tl-ga{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:0 12px 12px;margin-top:auto}
+.tl-ga .dz-add{height:32px;margin:0;padding:0 10px;display:inline-flex;align-items:center;text-decoration:none;color:var(--ink)}
+.tl-open{margin-left:auto!important}
+.tl-like{height:32px;padding:0 10px;border:1px solid var(--line);background:none;cursor:pointer;font-family:var(--mono);color:var(--ink)}
+.tl-like.on{color:#d8463a;border-color:#d8463a}
+.tl-empty{grid-column:1/-1;color:var(--muted);font-size:calc(14px * var(--z));margin:8px 0}
+.tl-empty a{color:var(--violet)}
+.tl-quiz{padding:24px 56px 32px;border-bottom:1px solid var(--line)}
+.tl-qi{display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
+.tl-qi h3,.tl-en h3{font-family:"Kanit",var(--body);font-weight:800;font-size:calc(22px * var(--z));margin:0 0 8px}
+.tl-qi p{margin:0 0 14px;color:var(--ink-2)}
+.tl-qp{position:relative;display:flex;justify-content:space-between;font-family:var(--mono);font-size:calc(12px * var(--z));color:var(--muted);padding-bottom:8px;border-bottom:1px solid var(--line)}
+.tl-qp i{position:absolute;left:0;bottom:-1px;height:3px;background:var(--violet)}
+.tl-qq{font-family:"Kanit",var(--body);font-weight:800;font-size:calc(22px * var(--z));line-height:1.4;margin:18px 0 14px;text-wrap:balance}
+.tl-qc{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tl-qc button{display:flex;gap:12px;align-items:center;text-align:left;min-height:52px;padding:10px 14px;border:1px solid var(--line);background:var(--paper);cursor:pointer;font-size:calc(15px * var(--z));color:var(--ink)}
+.tl-qc button:hover:not(:disabled){border-color:var(--ink)}
+.tl-qc button b{font-family:var(--mono);color:var(--violet);flex:none}
+.tl-qc button.ok{border-color:#3f8c3c;background:color-mix(in srgb,#3f8c3c 14%,var(--paper))}
+.tl-qc button.bad{border-color:#d8463a;background:color-mix(in srgb,#d8463a 12%,var(--paper))}
+.tl-qc button:disabled{cursor:default}
+.tl-why{margin:14px 0;padding:10px 14px;border-left:3px solid;font-size:calc(14px * var(--z))}
+.tl-why.ok{border-color:#3f8c3c}.tl-why.bad{border-color:#d8463a}
+.tl-why a{color:var(--violet);white-space:nowrap}
+.tl-lb{list-style:none;margin:0 0 6px;padding:0;border:1px solid var(--line)}
+.tl-lb li{display:grid;grid-template-columns:28px 1fr auto;gap:10px;padding:7px 12px;border-bottom:1px solid var(--line);font-size:calc(14px * var(--z))}
+.tl-lb li:last-child{border-bottom:0}
+.tl-lb span,.tl-lb em{font-family:var(--mono);font-style:normal;color:var(--muted)}
+.tl-lb li:first-child b{color:var(--violet)}
+.tl-rev{list-style:none;margin:0 0 14px;padding:0;font-size:calc(13px * var(--z))}
+.tl-rev li{padding:4px 0;border-bottom:1px dashed var(--line)}
+.tl-rev li span{font-family:var(--mono);margin-right:8px}
+.tl-rev li.ok span{color:#3f8c3c}.tl-rev li.bad span{color:#d8463a}
+.tl-rev em{display:block;font-style:normal;color:var(--muted);font-size:.92em}
+.tl-send{display:flex;gap:6px;margin-bottom:12px}
+.tl-send input{flex:1;min-width:0;height:40px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:0 10px;font-size:calc(14px * var(--z))}
+.tl-fig{max-width:340px;margin-bottom:12px}
+.tl-lv{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.tl-lv input{width:100%;height:36px;padding:0 8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:calc(13px * var(--z))}
+.tl-verdict{padding:12px 14px;margin-bottom:10px;border:1px solid var(--line);font-family:"Kanit",var(--body);font-weight:800;font-size:calc(18px * var(--z))}
+.tl-verdict.ok{border-color:#3f8c3c;color:#2e7a2b}.tl-verdict.bad{border-color:#d8463a;color:#c23a2f}
+.tl-items{display:flex;flex-direction:column;gap:6px}
+.tl-it{display:grid;grid-template-columns:24px 1fr 34px 34px 34px;gap:6px;align-items:center;padding:6px;border:1px solid var(--line);cursor:pointer}
+.tl-it.on{border-color:var(--violet);box-shadow:inset 3px 0 0 var(--violet)}
+.tl-it b{font-family:var(--mono);color:var(--violet);text-align:center}
+.tl-it span{font-size:calc(13.5px * var(--z));min-width:0}
+.tl-it small{display:block;font-family:var(--mono);font-size:calc(11px * var(--z));color:var(--muted)}
+.tl-it button{height:34px;border:1px solid var(--line);background:none;cursor:pointer;color:var(--ink)}
+.tl-it button:hover{border-color:var(--ink)}
+.tl-site{touch-action:none;max-height:72vh}
+.tl-fd{cursor:grab}
+.tl-fd.sel rect:first-child{stroke:var(--violet);stroke-width:.7}
+.tl-calc{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));border-bottom:1px solid var(--line)}
+.tl-cc{padding:18px 24px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.tl-cc .r a{color:var(--violet)}
+.tl-en{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:24px 56px 32px;border-bottom:1px solid var(--line)}
+.tl-en>div{min-width:0}
+.tl-pts{margin:0;padding-left:18px;font-size:calc(14px * var(--z))}
+.tl-pts li{margin-bottom:6px}
+.tl-chs{list-style:none;margin:0;padding:0;border:1px solid var(--line)}
+.tl-chs a{display:grid;grid-template-columns:62px 1fr;gap:8px;padding:6px 12px;border-bottom:1px solid var(--line);text-decoration:none;font-size:calc(14px * var(--z))}
+.tl-chs li:last-child a{border-bottom:0}
+.tl-chs a:hover{background:var(--violet-soft)}
+.tl-chs span{font-family:var(--mono);color:var(--muted);font-size:.85em}
+.dz-banner{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:10px 56px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--lime) 35%,var(--paper));font-size:calc(14px * var(--z))}
+.dz-banner b{font-weight:700}
+.dz-banner .dz-add{margin:0;height:32px;padding:0 10px}
+.dz-shout{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.dz-shout input{flex:1;min-width:0;height:36px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-family:var(--mono);font-size:calc(12px * var(--z));padding:0 8px}
+.dz-3d{position:relative;aspect-ratio:16/10;max-width:100%;border:1px solid var(--line);background:var(--bg)}
+.dz-3d canvas{width:100%;height:100%;display:block;touch-action:none}
+.dz-3d span{position:absolute;left:10px;bottom:8px;font-family:var(--mono);font-size:calc(11px * var(--z));color:var(--muted)}
+.dz-ph .r .dz-add{margin:0;height:28px;padding:0 10px}
+@media (max-width:820px){
+  .tl-bar,.tl-gal,.tl-quiz,.tl-en,.dz-banner{padding-left:16px;padding-right:16px}
+  .tl-inl{margin-left:0}
+  .tl-qi,.tl-en{grid-template-columns:1fr}
+  .tl-qc{grid-template-columns:1fr}
+  .tl-cc{padding:16px}
+  .tl-sitep .dz-out{order:-1}
+  .tl-sitep .dz-form{border-top:1px solid var(--line)}
+  .tl-card{padding:18px 16px 22px}
+}
 </style>
 <script>(function(){try{var t=localStorage.getItem('cy.theme');if(t)document.documentElement.dataset.theme=t;var z=localStorage.getItem('cy.z');if(z)document.documentElement.style.setProperty('--z',z)}catch(e){}})();</script>
 </head>
@@ -472,7 +581,7 @@ mark{background:var(--lime);color:#0b0b0c;padding:0 2px}
       <a href="#/sports" data-jump="sports">กีฬา</a><span class="sep">/</span>
       <a href="#/c2">วิศวกรรม</a><span class="sep">/</span>
       <a href="#/c23">เปรียบเทียบ</a><span class="sep">/</span>
-      <a href="#/design" style="color:var(--violet);font-weight:700">ออกแบบ</a><span class="sep">/</span>
+      <a href="#/tools" style="color:var(--violet);font-weight:700">เครื่องมือ</a><span class="sep">/</span>
       <a href="#/c26">อ้างอิง</a>
     </nav>
     <div class="links crumb" id="crumb" style="display:none"></div>
@@ -6739,10 +6848,25 @@ window.VOX = (function(){
     }
     c2.globalAlpha = 1;
   }
+  function norm(cubes){ let mz = 0, ex = 0, a = 1e9, b = -1e9, c = 1e9, d = -1e9;
+    cubes.forEach(q => { a = Math.min(a, q.x); b = Math.max(b, q.x); c = Math.min(c, q.y); d = Math.max(d, q.y); });
+    const mx = (a + b) / 2, my = (c + d) / 2; cubes.forEach(q => { q.x -= mx; q.y -= my; mz = Math.max(mz, q.z); ex = Math.max(ex, Math.abs(q.x), Math.abs(q.y)); });
+    return {cubes, mz, ex}; }
   function mini(canvas, num){
     prep();
     const fi = F.findIndex(f => f.num === num); if (fi < 0) return {stop(){}};
-    const b = built[fi], c2 = canvas.getContext('2d');
+    return play(canvas, built[fi]);
+  }
+  // เล่นภาพก้อนพิกเซลชุดใดก็ได้ opt.drag = ลากเพื่อหมุน
+  function play(canvas, b, opt){
+    const c2 = canvas.getContext('2d');
+    let yaw = .78, off = 0, auto = true, drag = null, last = performance.now();
+    if (opt && opt.drag) {
+      canvas.style.cursor = 'grab';
+      canvas.onpointerdown = e => { drag = {x: e.clientX, o: off}; auto = false; try { canvas.setPointerCapture(e.pointerId); } catch(_) {} };
+      canvas.onpointermove = e => { if (drag) off = drag.o + (e.clientX - drag.x) / 110; };
+      canvas.onpointerup = canvas.onpointercancel = () => { drag = null; };
+    }
     const items = b.cubes.map(q => ({b: [q.x, q.y, q.z], p: [q.x, q.y, q.z], c: hex(q.c), al: 0, d: Math.random() * .45 + (q.z > 0 ? .3 : 0) + (q.x + b.ex) / (2 * b.ex + 1) * .25}));
     let id = 0, alive = true; const t0 = performance.now();
     const fr = now => {
@@ -6755,7 +6879,8 @@ window.VOX = (function(){
       for (const v of items) { const k = reduce ? 1 : Math.max(0, Math.min(1, (u - v.d) / .55)); const e = 1 - Math.pow(1 - k, 3);
         v.p = [v.b[0], v.b[1], v.b[2] + (1 - e) * 9]; v.al = Math.min(1, k * 1.6); }
       const ext = b.ex * 1.414 + 1, sc = Math.min(w * .8 / ext, h * .74 / (ext * .55 + b.mz + 1.2));
-      drawItems(c2, w, h, items, sc, .78 + (reduce ? 0 : (now - t0) / 4200), .55);
+      if (auto && !reduce) yaw += (now - last) / 4200; last = now;
+      drawItems(c2, w, h, items, sc, yaw + off, .55);
     };
     id = requestAnimationFrame(fr);
     return {stop(){ alive = false; cancelAnimationFrame(id); }};
@@ -6764,6 +6889,8 @@ window.VOX = (function(){
   return {
     fields: F,
     mini,
+    make, C,
+    custom(canvas, cubes, opt){ return play(canvas, norm(cubes), opt); },
     start(canvas, h){
       this.stop(); prep(); cvs = canvas; ctx = cvs.getContext('2d'); hooks = h || {};
       V.forEach(v => { const r = 6 + Math.random() * 9, th = Math.random() * 6.283; v.p = [Math.cos(th) * r, Math.sin(th) * r, 2 + Math.random() * 9]; v.c = cloudCol(); v.al = .9; });
@@ -7317,8 +7444,8 @@ window.FD = (function(){
     const corners = g.courts.map((yc, i) => [[-g.Lp / 2, yc - g.W / 2], [g.Lp / 2, yc - g.W / 2], [g.Lp / 2, yc + g.W / 2], [-g.Lp / 2, yc + g.W / 2]].map(([x, y], j) => `<tr><td>${g.n > 1 ? 'สนาม ' + (i + 1) + ' · ' : ''}มุม ${'ABCD'[j]}</td><td class="num">${f(x, 3)}</td><td class="num">${f(y, 3)}</td><td class="num">${f(lv.F + lv.fs(x, y), 3)}</td></tr>`).join('')).join('');
     const tag = {ok:'ผ่าน', warn:'ระวัง', bad:'ไม่ผ่าน', info:'ข้อมูล'};
     return `
-    <div class="dz-panel"><div class="dz-ph"><span class="n">/A</span><h3>ผังที่ดินและสนาม</h3><span class="r">${esc(g.sp.n)} × ${g.n}</span></div>
-      ${planSVG(g)}
+    <div class="dz-panel"><div class="dz-ph"><span class="n">/A</span><h3>ผังที่ดินและสนาม</h3><span class="r">${esc(g.sp.n)} × ${g.n} <button class="dz-add" data-act="v3d">${S.v3d ? 'ผัง 2D' : 'ดู 3D'}</button></span></div>
+      ${S.v3d ? '<div class="dz-3d"><canvas aria-label="ภาพสามมิติของสนามที่ออกแบบ"></canvas><span>ลากเพื่อหมุน</span></div>' : planSVG(g)}
       <div class="dz-legend"><span><i style="background:${col('play')}"></i>พื้นที่เล่น</span><span><i style="background:${col('run')}"></i>ระยะรอบ (แผ่นสนาม)</span><span><i style="border:2px dashed #2b98d6"></i>รางระบายน้ำ</span><span><i style="background:#2b98d6"></i>ทิศน้ำไหลบนผิว</span><span><i style="background:repeating-linear-gradient(45deg,transparent 0 3px,var(--line) 3px 4px)"></i>ที่ดิน</span><span>ภาพเส้นสนามโดยย่อ ไม่ใช่แบบตีเส้น</span></div>
     </div>
     <div class="dz-panel"><div class="dz-ph"><span class="n">/B</span><h3>ตัวเลขหลัก</h3></div>
@@ -7479,7 +7606,76 @@ window.FD = (function(){
   }
 
   let root = null, outEl = null, formEl = null;
-  function refresh(){ outEl.innerHTML = outHTML(); save(); }
+  let v3 = null;
+  function refresh(){ if (v3) { v3.stop(); v3 = null; } outEl.innerHTML = outHTML(); if (S.v3d) { const cv = outEl.querySelector('.dz-3d canvas'); if (cv && window.VOX && VOX.custom) v3 = VOX.custom(cv, voxelCubes(), {drag:true}); } save(); }
+  // ก้อนพิกเซลของแบบปัจจุบัน: แผ่นสนาม พื้นที่เล่น เส้น และตาข่าย ตามสีที่เลือก
+  function voxelCubes(){
+    const g = geom(), m = VOX.make(g.P, g.Q, 0, 34, true), line = col('line'), play = col('play');
+    m.all(col('run'));
+    g.courts.forEach(yc => {
+      const ox = g.P / 2, oy = g.Q / 2 + yc;
+      m.area(ox - g.Lp / 2, oy - g.W / 2, ox + g.Lp / 2, oy + g.W / 2, play);
+      g.pr.forEach(p => {
+        if (p.t === 'l') p.net ? m.seg(ox + p.x1, oy + p.y1, ox + p.x2, oy + p.y2, '#2b3238', 1) : m.seg(ox + p.x1, oy + p.y1, ox + p.x2, oy + p.y2, line);
+        else if (p.t === 'a') m.arc(ox + p.cx, oy + p.cy, p.r, rad(p.a0), rad(p.a1), line);
+        else m.seg(ox + p.x, oy + p.y, ox + p.x, oy + p.y, line);
+      });
+    });
+    return m.out();
+  }
+  // ภาพผังย่อของงานที่แชร์ (ใช้ในแกลเลอรี) โดยไม่แตะงานของผู้ใช้
+  function thumb(d){
+    const keep = S, tmp = !!(d && d.uspDef && d.uspDef.id === d.sport && !SP[d.sport]);
+    try { if (tmp) SP[d.sport] = normUser(d.uspDef); if (!d || !SP[d.sport] || !SF[d.surf]) return ''; S = Object.assign(DEF(), d); return planSVG(geom()); }
+    catch(e) { return ''; } finally { S = keep; if (tmp) delete SP[d.sport]; }
+  }
+  // ---------- แชร์ลิงก์ ----------
+  const ONLINE = () => /^https?:$/.test(location.protocol) && !EMBED;
+  async function api(path, body){
+    const r = await fetch('/api/' + path, body ? {method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify(body)} : {cache:'no-store'});
+    let j = null; try { j = await r.json(); } catch(e) {}
+    if (!r.ok) throw new Error((j && j.error) || 'HTTP ' + r.status);
+    return j;
+  }
+  const mine = () => { try { const a = JSON.parse(store.get('cy.mine')); return Array.isArray(a) ? a : []; } catch(e) { return []; } };
+  let SHARED = null;
+  async function shareGo(){
+    if (!ONLINE()) return msg('แชร์ลิงก์ได้เมื่อเปิดจากเว็บไซต์ fieldstd.vercel.app (ไฟล์ในเครื่องและหน้าเดโม่ส่งข้อมูลออกไม่ได้)', 1);
+    const title = root.querySelector('#dzShTitle').value.trim(), author = root.querySelector('#dzShAuthor').value.trim(), pub = root.querySelector('#dzShPub').checked;
+    if (!title) return msg('ตั้งชื่องานก่อนแชร์', 1);
+    store.set('cy.author', author); save();
+    const d = clone(S); delete d.from; delete d.v3d;
+    const btn = root.querySelector('[data-act="shareGo"]'); btn.disabled = true;
+    try {
+      const j = await api('designs', {action:'create', design:d, title, author, pub, sportName:SP[S.sport].n});
+      const m = mine(); m.unshift({id:j.id, token:j.token, title, created:Date.now()}); store.set('cy.mine', JSON.stringify(m.slice(0, 200)));
+      const url = location.origin + location.pathname + '#/d/' + j.id;
+      root.querySelector('#dzShOut').innerHTML = `<div class="dz-shout"><input readonly value="${esc(url)}" aria-label="ลิงก์งาน" onfocus="this.select()"><button class="bk vio" data-act="copyLink" data-url="${esc(url)}">คัดลอกลิงก์</button></div>
+        <p class="dz-note">${pub ? 'เผยแพร่ในแกลเลอรีแล้ว' : 'ไม่ได้เผยแพร่ในแกลเลอรี เปิดได้เฉพาะคนที่มีลิงก์'} เปลี่ยนการเผยแพร่หรือลบได้ที่ <a href="#/gallery">แกลเลอรี → งานของฉัน</a></p>`;
+      copy(url, 'สร้างลิงก์และคัดลอกแล้ว');
+    } catch(e) { msg('แชร์ไม่สำเร็จ: ' + e.message, 1); }
+    btn.disabled = false;
+  }
+  function banner(){
+    const b = root && root.querySelector('#dzBanner'); if (!b) return;
+    if (!SHARED) { b.hidden = true; return; }
+    const lk = (() => { try { return (JSON.parse(store.get('cy.liked')) || {})[SHARED.id]; } catch(e) { return 0; } })();
+    b.hidden = false;
+    b.innerHTML = `<span>กำลังดู <b>“${esc(SHARED.title)}”</b> โดย ${esc(SHARED.author)} · ${esc(SHARED.sport)}</span>
+      ${SHARED.pub ? `<button class="dz-add tl-like${lk ? ' on' : ''}" data-act="likeShared">♥ ${SHARED.likes}</button>` : ''}
+      <span class="dz-note" style="margin:0">แก้ต่อได้เลย งานจะบันทึกในเครื่องของคุณ</span>
+      ${store.get(KEY + '.bak') ? '<button class="dz-add" data-act="backMine">กลับไปงานของฉัน</button>' : ''}`;
+  }
+  async function loadShared(id){
+    if (!ONLINE()) return msg('เปิดลิงก์งานที่แชร์ได้จากเว็บไซต์ fieldstd.vercel.app', 1);
+    msg('กำลังเปิดงานที่แชร์…');
+    try {
+      const j = await api('designs?id=' + encodeURIComponent(id));
+      if (!S.from) store.set(KEY + '.bak', JSON.stringify(S));
+      const o = adopt(j.design); if (!o) throw new Error('ข้อมูลงานไม่ถูกต้อง');
+      o.from = j.id; S = o; ED = null; SHARED = j; rebuildForm(); refresh(); banner(); msg('เปิดงาน “' + j.title + '” แล้ว');
+    } catch(e) { msg('เปิดงานไม่ได้: ' + e.message, 1); }
+  }
   function rebuildForm(){ formEl.innerHTML = ED ? editorHTML() : formHTML(); }
   function applySport(k){
     const sp = SP[k]; S.sport = k; Object.assign(S, {L:sp.L, W:sp.W, re:sp.re, rs:sp.rs, lw:sp.lw, gap:2 * sp.rs});
@@ -7507,6 +7703,13 @@ window.FD = (function(){
   }
   function onClick(e){
     const b = e.target.closest('[data-act],[data-del],[data-pal]'); if (!b) return;
+    if (b.dataset.act === 'v3d') { S.v3d = S.v3d ? 0 : 1; return refresh(); }
+    if (b.dataset.act === 'share') { const pn = root.querySelector('#dzShare'); pn.hidden = !pn.hidden;
+      if (!pn.hidden) { const t = root.querySelector('#dzShTitle'); if (!t.value) t.value = SP[S.sport].n + ' ของฉัน'; root.querySelector('#dzShAuthor').value = store.get('cy.author') || ''; t.focus(); } return; }
+    if (b.dataset.act === 'shareGo') return shareGo();
+    if (b.dataset.act === 'copyLink') return copy(b.dataset.url, 'คัดลอกลิงก์แล้ว');
+    if (b.dataset.act === 'likeShared') { if (!SHARED) return; api('designs', {action:'like', id:SHARED.id}).then(j => { SHARED.likes = j.likes; try { const l = JSON.parse(store.get('cy.liked')) || {}; l[SHARED.id] = 1; store.set('cy.liked', JSON.stringify(l)); } catch(_) {} banner(); }).catch(err => msg(err.message, 1)); return; }
+    if (b.dataset.act === 'backMine') { const o = adopt(JSON.parse(store.get(KEY + '.bak') || 'null')); store.set(KEY + '.bak', ''); if (o) { S = o; delete S.from; } SHARED = null; ED = null; rebuildForm(); refresh(); banner(); return msg('กลับมาที่งานของคุณแล้ว'); }
     if (b.dataset.pal !== undefined) { const p = PAL[+b.dataset.pal]; S.col = {play:p[1], run:p[2], line:p[3]}; rebuildForm(); return refresh(); }
     if (b.dataset.del !== undefined) { S.layers.splice(+b.dataset.del, 1); rebuildForm(); return refresh(); }
     const a = b.dataset.act;
@@ -7572,11 +7775,15 @@ window.FD = (function(){
     el.innerHTML = `
     <section class="dz-top"><div><span class="lbl vi">/DESIGN · FIELD_DESIGNER</span><h1>Design Mode<span>โหมดออกแบบสนามกีฬาของคุณเอง</span></h1>
       <p>เลือกกีฬา ใส่ขนาดที่ดิน ระดับดินเดิม ชนิดผิว และข้อมูลฝน ระบบจะวางผัง ตรวจกับกติกา หาระดับให้ดินตัด-ถมสมดุล ออกแบบรางระบายน้ำ และถอดปริมาณงานให้ทันที โดยใช้สูตรจากบทที่ 2 และค่ากติกาจากบทของแต่ละกีฬา</p></div>
-      <div class="dz-acts"><button class="bk ghost" data-act="reset">↺ ค่าเริ่มต้น</button><button class="bk ghost" data-act="load">นำเข้างาน</button><button class="bk ghost" data-act="json">${EMBED ? 'คัดลอกงาน' : 'บันทึกไฟล์'}</button><button class="bk ghost" data-act="csv">${EMBED ? 'คัดลอก BOQ' : 'BOQ.CSV'}</button>${EMBED ? '' : '<button class="bk" data-act="print">พิมพ์ / PDF</button>'}</div>
+      <div class="dz-acts"><button class="bk vio" data-act="share">แชร์ลิงก์</button><button class="bk ghost" data-act="reset">↺ ค่าเริ่มต้น</button><button class="bk ghost" data-act="load">นำเข้างาน</button><button class="bk ghost" data-act="json">${EMBED ? 'คัดลอกงาน' : 'บันทึกไฟล์'}</button><button class="bk ghost" data-act="csv">${EMBED ? 'คัดลอก BOQ' : 'BOQ.CSV'}</button>${EMBED ? '' : '<button class="bk" data-act="print">พิมพ์ / PDF</button>'}</div>
       <input type="file" id="dzFile" accept="application/json,.json" hidden>
       <div class="dz-imp" id="dzImp" hidden><label for="dzImpText">วางข้อมูลงานที่คัดลอกไว้ หรือเลือกไฟล์ .json</label><textarea id="dzImpText" rows="3" placeholder='{"sport":"football", ...}'></textarea>
         <div class="dz-btns"><button class="bk vio" data-act="impText">นำเข้า</button><button class="bk ghost" data-act="impFile">เลือกไฟล์ .json</button></div></div>
+      <div class="dz-imp" id="dzShare" hidden><div class="dz-g"><label class="dz-f"><span>ชื่องาน</span><input type="text" id="dzShTitle" maxlength="60"></label><label class="dz-f"><span>ชื่อผู้ออกแบบ</span><input type="text" id="dzShAuthor" maxlength="40" placeholder="ไม่ระบุก็ได้"></label>
+        <label class="dz-chk full"><input type="checkbox" id="dzShPub"> เผยแพร่ในแกลเลอรีให้ทุกคนเห็น (ถ้าไม่ติ๊ก จะเปิดได้เฉพาะคนที่มีลิงก์)</label></div>
+        <div class="dz-btns"><button class="bk vio" data-act="shareGo">สร้างลิงก์</button><a class="bk ghost" href="#/gallery">ไปแกลเลอรี</a></div><div id="dzShOut"></div></div>
       <p class="dz-msg" id="dzMsg" role="status" hidden></p></section>
+    <div class="dz-banner" id="dzBanner" hidden></div>
     <p class="dz-warn"><b>เพื่อการเรียนรู้</b>ผลลัพธ์เป็นการออกแบบเบื้องต้น ไม่ใช่แบบก่อสร้าง ค่าความหนาชั้น ค่า C ความเข้มฝน และราคา เป็นค่าตัวอย่างที่ต้องแทนด้วยข้อมูลจริงของโครงการ และต้องให้วิศวกรผู้ได้รับใบอนุญาตตรวจและลงนามรับรอง</p>
     <section class="dz"><div class="dz-form" id="dzForm"></div><div class="dz-out" id="dzOut"></div></section>`;
     formEl = el.querySelector('#dzForm'); outEl = el.querySelector('#dzOut');
@@ -7585,7 +7792,499 @@ window.FD = (function(){
     el.querySelector('#dzFile').addEventListener('change', e => { const file = e.target.files[0]; if (!file) return; file.text().then(t => { if (importText(t)) root.querySelector('#dzImp').hidden = true; }); e.target.value = ''; });
     rebuildForm(); refresh();
   }
-  return {mount, SP, SF, _test:{marks, primLen, geom, levels, drain, checks, boq, set:o => Object.assign(S, o), get:() => S, DEF, applySport, applySurf}};
+  return {mount, SP, SF, loadShared, thumb, api:{SP, SF, marks, primLen, SURF_COL, RUN_COL}, _test:{marks, primLen, geom, levels, drain, checks, boq, set:o => Object.assign(S, o), get:() => S, DEF, applySport, applySurf}};
+})();
+
+</script>
+<script>
+window.TL = (function(){
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+  const load = (k, d) => { try { const v = JSON.parse(store.get(k)); return v && typeof v === 'object' ? Object.assign(d, v) : d; } catch(e) { return d; } };
+  const f = (v, d = 2) => (isFinite(v) ? +v : 0).toLocaleString('en-US', {minimumFractionDigits: d, maximumFractionDigits: d});
+  const num = v => (v === '' || v === null || v === undefined || !isFinite(+v)) ? null : +v;
+  const EMBED = (() => { try { return window.self !== window.top; } catch(e) { return true; } })();
+  const ONLINE = /^https?:$/.test(location.protocol) && !EMBED;
+  const ARW = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M4 12 12 4M5 4h7v7"/></svg>';
+  async function api(path, body){
+    const r = await fetch('/api/' + path, body ? {method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify(body)} : {cache:'no-store'});
+    let j = null; try { j = await r.json(); } catch(e) {}
+    if (!r.ok) throw new Error((j && j.error) || 'HTTP ' + r.status);
+    return j;
+  }
+  const head = (code, en, th, p) => `<section class="dz-top"><div><span class="lbl vi">/TOOLS · ${code}</span><h1>${en}<span>${th}</span></h1><p>${p}</p></div><div class="dz-acts" data-acts></div><p class="dz-msg" data-msg role="status" hidden></p></section>`;
+  function msgIn(root){ let t = 0; return (s, bad) => { const m = root.querySelector('[data-msg]'); if (!m) return; m.textContent = s; m.className = 'dz-msg' + (bad ? ' bad' : ''); m.hidden = false; clearTimeout(t); t = setTimeout(() => { m.hidden = true; }, 5000); }; }
+  function copyText(text, say){ try { navigator.clipboard.writeText(text).then(() => say('คัดลอกแล้ว'), () => say('คัดลอกอัตโนมัติไม่ได้ ลองเลือกข้อความแล้วคัดลอกเอง', 1)); } catch(e) { say('คัดลอกอัตโนมัติไม่ได้', 1); } }
+  function armed(btn, label){
+    if (btn.dataset.armed) return true;
+    const old = btn.textContent; btn.dataset.armed = 1; btn.textContent = label; btn.classList.add('arm');
+    setTimeout(() => { if (btn.isConnected) { delete btn.dataset.armed; btn.textContent = old; btn.classList.remove('arm'); } }, 3500);
+    return false;
+  }
+  const SPX = () => FD.api.SP;
+  const sportOpts = cur => {
+    const o = ([k, v]) => `<option value="${k}"${cur === k ? ' selected' : ''}>${esc(v.n)}</option>`;
+    const all = Object.entries(SPX()).filter(([k]) => k !== 'custom');
+    const b = all.filter(([, v]) => !v.user), u = all.filter(([, v]) => v.user);
+    return `<optgroup label="ตามกติกาสหพันธ์">${b.map(o).join('')}</optgroup>${u.length ? `<optgroup label="กีฬาที่สร้างเอง">${u.map(o).join('')}</optgroup>` : ''}`;
+  };
+
+  // ======================= หน้ารวมเครื่องมือ =======================
+  const TOOLS = [
+    ['design', 'DESIGN', 'ออกแบบสนาม', 'วางผัง ตรวจกติกา งานดิน ระบายน้ำ และ BOQ ของสนามหนึ่งแห่ง สร้างกีฬาและกติกาเองได้'],
+    ['gallery', 'GALLERY', 'แกลเลอรีสนาม', 'ดูสนามที่คนอื่นออกแบบและเลือกเผยแพร่ กดถูกใจ หรือเปิดมาทำต่อ'],
+    ['site', 'SITE_PLAN', 'วางผังหลายสนาม', 'ลากวางหลายสนามในที่ดินเดียว ตรวจการทับซ้อนและระยะห่าง พร้อมรวมพื้นที่ทั้งโครงการ'],
+    ['check', 'INSPECT', 'ตรวจรับสนามหน้างาน', 'กรอกค่าที่วัดจริง ด้าน ทแยงมุม และระดับ แล้วให้ระบบตรวจกับกติกาและค่าคลาดเคลื่อน'],
+    ['calc', 'CALC', 'เครื่องคิดเลขงานสนาม', 'มุมฉาก น้ำฝน ราง ดินตัด-ถม การบดอัด ความลาด และปริมาณวัสดุ'],
+    ['quiz', 'QUIZ', 'แบบฝึกหัด', 'คำถามง่าย ๆ 10 ข้อจากเนื้อหาในเล่ม เฉลยทันทีพร้อมลิงก์ไปบทที่เกี่ยวข้อง'],
+    ['en', 'ENGLISH', 'English overview', 'An English guide to the handbook and its tools']
+  ];
+  function hub(el){
+    el.innerHTML = head('HUB', 'Toolbox', 'เครื่องมือทั้งหมด', 'เครื่องมือที่ใช้ค่าจากคู่มือเล่มนี้โดยตรง เลือกได้ตามงานที่ทำ ทุกเครื่องมือเปิดบนมือถือได้') +
+      `<section class="tl-hub">${TOOLS.map(([k, c, t, d], i) => `<a class="tl-card" href="#/${k}"><span class="lbl vi">/${String(i + 1).padStart(2, '0')} ${c}</span><b>${esc(t)}</b><span>${esc(d)}</span><i>${ARW}</i></a>`).join('')}</section>`;
+  }
+
+  // ======================= แกลเลอรี =======================
+  function gallery(el){
+    const st = {tab: 'new', sport: '', items: [], mine: []};
+    const say = msgIn(el);
+    const mineList = () => { try { const a = JSON.parse(store.get('cy.mine')); return Array.isArray(a) ? a : []; } catch(e) { return []; } };
+    const setMine = a => store.set('cy.mine', JSON.stringify(a.slice(0, 200)));
+    const liked = () => { try { return JSON.parse(store.get('cy.liked')) || {}; } catch(e) { return {}; } };
+    el.innerHTML = head('GALLERY', 'Gallery', 'แกลเลอรีสนาม', 'สนามที่ผู้ใช้ออกแบบแล้วเลือกเผยแพร่ กดเปิดเพื่อดูผลตรวจ งานดิน และ BOQ ครบ แล้วแก้ต่อเป็นงานของคุณได้') +
+      `<section class="tl-bar"><div class="tl-tabs" role="tablist">${[['new', 'ล่าสุด'], ['top', 'ถูกใจมากสุด'], ['mine', 'งานของฉัน']].map(([k, t]) => `<button role="tab" data-tab="${k}">${t}</button>`).join('')}</div>
+        <label class="tl-inl">กีฬา <select data-sport><option value="">ทั้งหมด</option></select></label><a class="bk vio" href="#/design">+ ออกแบบใหม่</a></section>
+      <section class="tl-gal" data-grid></section>`;
+    const grid = el.querySelector('[data-grid]');
+    const card = (it, own) => {
+      const lk = liked()[it.id];
+      return `<div class="tl-gc"><a class="tl-th" href="#/d/${it.id}" aria-label="เปิด ${esc(it.title)}">${FD.thumb(it.design) || '<span>ไม่มีภาพตัวอย่าง</span>'}</a>
+        <div class="tl-gb"><b>${esc(it.title)}</b><span>${esc(it.author)} · ${esc(it.sport)}</span><small>${new Date(it.created).toLocaleDateString('th-TH', {day:'numeric', month:'short', year:'2-digit'})}</small></div>
+        <div class="tl-ga">${own ? `<label class="dz-chk"><input type="checkbox" data-pub="${it.id}"${it.pub ? ' checked' : ''}> เผยแพร่</label><button class="dz-add" data-copy="${it.id}">คัดลอกลิงก์</button><button class="dz-add" data-del="${it.id}">ลบ</button>`
+          : `<button class="tl-like${lk ? ' on' : ''}" data-like="${it.id}" aria-label="ถูกใจ">♥ <span>${it.likes}</span></button><a class="dz-add tl-open" href="#/d/${it.id}">เปิด</a>`}</div></div>`;
+    };
+    function paint(){
+      el.querySelectorAll('[data-tab]').forEach(b => b.setAttribute('aria-selected', b.dataset.tab === st.tab));
+      const src = st.tab === 'mine' ? st.mine : st.items;
+      const sports = [...new Set(src.map(x => x.sport))].sort();
+      const ss = el.querySelector('[data-sport]'); ss.innerHTML = `<option value="">ทั้งหมด</option>` + sports.map(s => `<option${s === st.sport ? ' selected' : ''}>${esc(s)}</option>`).join('');
+      const list = src.filter(x => !st.sport || x.sport === st.sport);
+      if (!ONLINE) { grid.innerHTML = `<p class="tl-empty">แกลเลอรีใช้งานได้เมื่อเปิดจากเว็บไซต์ <b>fieldstd.vercel.app</b> เท่านั้น</p>`; return; }
+      grid.innerHTML = list.length ? list.map(x => card(x, st.tab === 'mine')).join('')
+        : `<p class="tl-empty">${st.tab === 'mine' ? 'ยังไม่มีงานที่แชร์ไว้ เปิดโหมดออกแบบแล้วกด “แชร์ลิงก์”' : 'ยังไม่มีงานที่เผยแพร่ในหมวดนี้ เป็นคนแรกได้เลย'} <a href="#/design">ไปออกแบบ</a></p>`;
+    }
+    async function fetchTab(){
+      if (!ONLINE) return paint();
+      grid.innerHTML = '<p class="tl-empty">กำลังโหลด…</p>';
+      try {
+        if (st.tab === 'mine') {
+          const m = mineList(); const ids = m.map(x => x.id).slice(0, 40);
+          const j = ids.length ? await api('designs?ids=' + ids.join(',')) : {items: []};
+          st.mine = j.items;
+          const alive = new Set(j.items.map(x => x.id)); setMine(m.filter(x => alive.has(x.id)));
+        } else st.items = (await api('designs?list=' + st.tab)).items;
+      } catch(e) { say('โหลดแกลเลอรีไม่ได้: ' + e.message, 1); st.items = []; }
+      paint();
+    }
+    el.addEventListener('click', async e => {
+      const b = e.target.closest('button'); if (!b) return;
+      if (b.dataset.tab) { st.tab = b.dataset.tab; st.sport = ''; return fetchTab(); }
+      if (b.dataset.like) {
+        if (liked()[b.dataset.like]) return say('กดถูกใจงานนี้ไปแล้ว');
+        try { const j = await api('designs', {action:'like', id:b.dataset.like}); const l = liked(); l[b.dataset.like] = 1; store.set('cy.liked', JSON.stringify(l));
+          b.classList.add('on'); b.querySelector('span').textContent = j.likes; const it = st.items.find(x => x.id === b.dataset.like); if (it) it.likes = j.likes;
+        } catch(err) { say(err.message, 1); }
+      }
+      if (b.dataset.copy) copyText(location.origin + location.pathname + '#/d/' + b.dataset.copy, say);
+      if (b.dataset.del) {
+        if (!armed(b, 'กดอีกครั้งเพื่อลบ')) return;
+        const m = mineList(), it = m.find(x => x.id === b.dataset.del);
+        try { await api('designs', {action:'delete', id:b.dataset.del, token:it && it.token}); setMine(m.filter(x => x.id !== b.dataset.del)); say('ลบงานแล้ว'); fetchTab(); } catch(err) { say(err.message, 1); }
+      }
+    });
+    el.addEventListener('change', async e => {
+      const t = e.target;
+      if (t.dataset.sport !== undefined) { st.sport = t.value; return paint(); }
+      if (t.dataset.pub) {
+        const it = mineList().find(x => x.id === t.dataset.pub);
+        try { const j = await api('designs', {action:'set', id:t.dataset.pub, token:it && it.token, pub:t.checked}); say(j.pub ? 'เผยแพร่ในแกลเลอรีแล้ว' : 'ซ่อนจากแกลเลอรีแล้ว คนที่มีลิงก์ยังเปิดได้'); }
+        catch(err) { t.checked = !t.checked; say(err.message, 1); }
+      }
+    });
+    fetchTab();
+  }
+
+  // ======================= แบบฝึกหัด =======================
+  const Q = [
+    ['FIFA แนะนำให้สนามฟุตบอล 11 คนมีขนาดเท่าใด', ['100 × 64 m', '105 × 68 m', '110 × 75 m', '120 × 90 m'], 1, 'c3', '105 × 68 m เป็นขนาดที่ FIFA แนะนำ กติกายอมให้ยาว 90–120 m กว้าง 45–90 m'],
+    ['วงกลมกลางสนามฟุตบอลมีรัศมีเท่าใด', ['7.32 m', '9.15 m', '11 m', '16.5 m'], 1, 'c3', 'รัศมีวงกลมกลางสนาม 9.15 m'],
+    ['ประตูฟุตบอลกว้างและสูงเท่าใด (วัดด้านใน)', ['7.32 × 2.44 m', '5.00 × 2.00 m', '3.00 × 2.00 m', '7.00 × 2.50 m'], 0, 'c3', 'ระหว่างเสาด้านใน 7.32 m ขอบล่างคานถึงพื้น 2.44 m'],
+    ['จุดโทษฟุตบอลห่างจากกึ่งกลางระหว่างเสาประตูเท่าใด', ['9.15 m', '11 m', '12 m', '16.5 m'], 1, 'c3', 'จุดโทษอยู่ห่าง 11 m'],
+    ['สนามหญ้าเทียมฟุตบอลตาม FIFA Code of Practice 2023 ควรมีความลาดผิวเท่าใด', ['0%', '0.5–1%', '2–3%', '5%'], 1, 'c3', '0.5–1% ในทิศใดก็ได้ เพื่อระบายน้ำผิว'],
+    ['สนามบาสเกตบอลมาตรฐาน FIBA มีขนาดเท่าใด', ['26 × 14 m', '28 × 15 m', '30 × 16 m', '29 × 15 m'], 1, 'c6', '28 × 15 m วัดจากขอบในของเส้น'],
+    ['ส่วนโค้งเส้นสามแต้มบาสเกตบอล (FIBA) มีรัศมีเท่าใด', ['6.25 m', '6.75 m', '7.24 m', '5.80 m'], 1, 'c6', 'รัศมี 6.75 m วัดจากจุดใต้กึ่งกลางห่วง'],
+    ['สนามวอลเลย์บอลในร่มมีขนาดเท่าใด', ['16 × 8 m', '18 × 9 m', '20 × 10 m', '18 × 12 m'], 1, 'c16', '18 × 9 m'],
+    ['ตาข่ายวอลเลย์บอลชายสูงเท่าใด', ['2.24 m', '2.43 m', '2.55 m', '1.52 m'], 1, 'c16', 'ชาย 2.43 m หญิง 2.24 m'],
+    ['สนามแบดมินตันประเภทคู่มีขนาดเท่าใด', ['13.40 × 6.10 m', '13.40 × 5.18 m', '15 × 6 m', '12 × 6 m'], 0, 'c5', '13.40 × 6.10 m'],
+    ['สนามเซปักตะกร้อมีขนาดเท่ากับสนามกีฬาใด', ['เทนนิส', 'แบดมินตันประเภทคู่', 'วอลเลย์บอล', 'ฟุตซอล'], 1, 'c11', 'ขนาดเท่าสนามแบดมินตันคู่ 13.4 × 6.1 m'],
+    ['ตาข่ายเทนนิสที่กึ่งกลางสนามสูงเท่าใด', ['0.914 m', '1.07 m', '1.524 m', '0.80 m'], 0, 'c4', '0.914 m (3 ft) ที่กลาง และ 1.07 m ที่เสา'],
+    ['ประตูฟุตซอลมีขนาดภายในเท่าใด', ['กว้าง 3 m สูง 2 m', 'กว้าง 5 m สูง 2 m', 'กว้าง 7.32 m สูง 2.44 m', 'กว้าง 2 m สูง 1 m'], 0, 'c9', 'ขนาดภายในสูง 2 m กว้าง 3 m'],
+    ['สนามฮอกกี้มีขนาดเท่าใด', ['91.40 × 55.00 m', '100 × 60 m', '105 × 68 m', '80 × 50 m'], 0, 'c15', '91.40 × 55.00 m'],
+    ['สนามวอลเลย์บอลชายหาดต้องมีทรายลึกอย่างน้อยเท่าใด', ['10 cm', '20 cm', '40 cm', '1 m'], 2, 'c20', 'ทรายลึกอย่างน้อย 40 cm'],
+    ['สนามวอลเลย์บอลชายหาดมีขนาดเท่าใด', ['16 × 8 m', '18 × 9 m', '15 × 7.5 m', '20 × 10 m'], 0, 'c20', '16 × 8 m'],
+    ['สระว่ายน้ำแข่งขันขนาดโอลิมปิกยาวเท่าใด', ['25 m', '33.3 m', '50 m', '100 m'], 2, 'c13', 'ความยาวสระ 50 m'],
+    ['พิตช์คริกเก็ตยาวเท่าใด', ['18.44 m', '20.12 m', '22.86 m', '27.43 m'], 1, 'c17', '22 หลา หรือ 20.12 m'],
+    ['สนามเปตองระดับชาติต้องมีขนาดอย่างน้อยเท่าใด', ['12 × 3 m', '15 × 4 m', '20 × 5 m', '10 × 4 m'], 1, 'c8', 'ขั้นต่ำ 15 × 4 m'],
+    ['ทางลาดสำหรับผู้พิการตามกฎกระทรวงต้องชันไม่เกินเท่าใด', ['1 : 8', '1 : 10', '1 : 12', '1 : 20'], 2, 'c2', 'ความลาดชันไม่เกิน 1 : 12'],
+    ['วิธีง่ายที่สุดในการตรวจว่าผังสนามสี่เหลี่ยมเป็นมุมฉาก คืออะไร', ['วัดเส้นทแยงมุมสองเส้นให้ยาวเท่ากัน', 'วัดด้านยาวสองด้าน', 'วัดความลาด', 'นับจำนวนเส้น'], 0, 'c2', 'สี่เหลี่ยมผืนผ้าต้องมีเส้นทแยงมุมสองเส้นยาวเท่ากัน'],
+    ['สนาม 105 × 68 m มีเส้นทแยงมุมยาวประมาณเท่าใด', ['115.5 m', '125.10 m', '173 m', '136.5 m'], 1, 'c2', 'd = √(105² + 68²) = √15,649 = 125.10 m'],
+    ['ในสูตร Q = C·i·A / 360 ค่า i ใช้หน่วยอะไร', ['mm/h', 'm/s', 'L/s', 'm³'], 0, 'c2', 'i คือความเข้มฝน (mm/h) A เป็นเฮกตาร์ ได้ Q เป็น m³/s'],
+    ['หน้าตัดดิน A₁ = 12 m², A₂ = 18 m² ห่างกัน 20 m ปริมาตรดินเท่าใด (วิธีพื้นที่หน้าตัดเฉลี่ย)', ['240 m³', '300 m³', '360 m³', '600 m³'], 1, 'c2', 'V = (12 + 18) / 2 × 20 = 300 m³'],
+    ['ค่า RC (ความแน่นสัมพัทธ์) ใช้ตรวจเรื่องใด', ['การบดอัดดิน', 'การระบายน้ำ', 'ความสว่าง', 'สีเส้น'], 0, 'c2', 'RC = γd สนาม ÷ γd สูงสุด × 100 ใช้ตรวจการบดอัด'],
+    ['เขตทราย (in-goal) ของสนามรักบี้ลึกได้สูงสุดเท่าใด', ['6 m', '10 m', '22 m', '30 m'], 2, 'c10', 'แต่ละฝั่ง 6–22 m']
+  ];
+  function quiz(el, ctx){
+    const say = msgIn(el), best = () => +store.get('cy.qbest') || 0;
+    let set = [], i = 0, score = 0, picked = null, log = [];
+    const chName = id => { const c = ctx.D.chapters.find(x => x.id === id); return c ? (c.num ? 'บทที่ ' + c.num + ' ' : '') + c.short : id; };
+    el.innerHTML = head('QUIZ', 'Quiz', 'แบบฝึกหัด', 'คำถามง่าย ๆ จากตัวเลขในคู่มือ รอบละ 10 ข้อ ตอบแล้วเฉลยทันที พร้อมลิงก์ไปอ่านบทนั้นต่อ') + `<section class="tl-quiz" data-q></section>`;
+    const box = el.querySelector('[data-q]');
+    async function board(){
+      const b = el.querySelector('[data-board]'); if (!b) return;
+      if (!ONLINE) { b.innerHTML = '<p class="tl-empty">กระดานคะแนนแสดงเมื่อเปิดจากเว็บไซต์ fieldstd.vercel.app</p>'; return; }
+      try { const j = await api('quiz'); b.innerHTML = j.top.length ? `<ol class="tl-lb">${j.top.map((r, k) => `<li><span>${k + 1}</span><b>${esc(r.name)}</b><em>${r.score}/10</em></li>`).join('')}</ol><small>สัปดาห์ ${esc(j.week)} · เริ่มนับใหม่ทุกวันจันทร์</small>` : '<p class="tl-empty">สัปดาห์นี้ยังไม่มีใครส่งคะแนน</p>'; }
+      catch(e) { b.innerHTML = `<p class="tl-empty">โหลดกระดานคะแนนไม่ได้ (${esc(e.message)})</p>`; }
+    }
+    function start(){
+      set = Q.map((q, k) => k).sort(() => Math.random() - .5).slice(0, 10).map(k => {
+        const q = Q[k], ord = [0, 1, 2, 3].sort(() => Math.random() - .5);
+        return {q:q[0], c:ord.map(o => q[1][o]), a:ord.indexOf(q[2]), ch:q[3], why:q[4]};
+      });
+      i = 0; score = 0; log = []; ask();
+    }
+    function intro(){
+      box.innerHTML = `<div class="tl-qi"><div><h3>พร้อมไหม?</h3><p>สุ่ม 10 ข้อจากคลัง ${Q.length} ข้อ ตอบผิดได้ ไม่มีจับเวลา คะแนนดีที่สุดของคุณ: <b>${best()}/10</b></p><button class="bk vio" data-go>เริ่มทำแบบฝึกหัด</button></div>
+        <div><h3>อันดับสัปดาห์นี้</h3><div data-board><p class="tl-empty">กำลังโหลด…</p></div></div></div>`;
+      board();
+    }
+    function ask(){
+      const q = set[i]; picked = null;
+      box.innerHTML = `<div class="tl-qp"><span>ข้อ ${i + 1} / 10</span><span>ถูก ${score}</span><i style="width:${i * 10}%"></i></div>
+        <h3 class="tl-qq">${esc(q.q)}</h3><div class="tl-qc">${q.c.map((c, k) => `<button data-c="${k}"><b>${'กขคง'[k]}</b>${esc(c)}</button>`).join('')}</div><div data-why></div>`;
+    }
+    function answer(k){
+      if (picked !== null) return; picked = k; const q = set[i], ok = k === q.a; if (ok) score++;
+      log.push({q:q.q, ok, ans:q.c[q.a]});
+      box.querySelectorAll('[data-c]').forEach(b => { const n = +b.dataset.c; b.disabled = true; if (n === q.a) b.classList.add('ok'); else if (n === k) b.classList.add('bad'); });
+      box.querySelector('[data-why]').innerHTML = `<div class="tl-why ${ok ? 'ok' : 'bad'}"><b>${ok ? 'ถูกต้อง' : 'ยังไม่ถูก'}</b> ${esc(q.why)} <a href="#/${q.ch}">อ่าน${esc(chName(q.ch))} ↗</a></div>
+        <button class="bk vio" data-next>${i < 9 ? 'ข้อต่อไป →' : 'ดูคะแนน'}</button>`;
+      box.querySelector('[data-next]').focus();
+    }
+    function done(){
+      if (score > best()) store.set('cy.qbest', score);
+      const nm = store.get('cy.author') || '';
+      box.innerHTML = `<div class="tl-qi"><div><h3>ได้ ${score} / 10 คะแนน</h3><p>${score >= 9 ? 'ยอดเยี่ยม จำค่ามาตรฐานได้แม่นมาก' : score >= 6 ? 'ดีมาก ลองอีกรอบเพื่อเก็บข้อที่พลาด' : 'ลองอ่านบทที่ลิงก์ไว้แล้วกลับมาทำใหม่'}</p>
+        <ul class="tl-rev">${log.map(r => `<li class="${r.ok ? 'ok' : 'bad'}"><span>${r.ok ? '✓' : '✗'}</span>${esc(r.q)} <em>${esc(r.ans)}</em></li>`).join('')}</ul>
+        <div class="dz-btns"><button class="bk vio" data-go>ทำอีกรอบ</button></div></div>
+        <div><h3>ส่งคะแนนขึ้นกระดาน</h3>${ONLINE ? `<form class="tl-send" data-send><input data-name maxlength="24" placeholder="ชื่อเล่นที่จะแสดง" value="${esc(nm)}" aria-label="ชื่อเล่น" required><button class="bk">ส่งคะแนน</button></form>` : ''}<div data-board><p class="tl-empty">กำลังโหลด…</p></div></div></div>`;
+      board();
+    }
+    el.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      if (b.hasAttribute('data-go')) start();
+      else if (b.dataset.c !== undefined) answer(+b.dataset.c);
+      else if (b.hasAttribute('data-next')) { i++; i < 10 ? ask() : done(); }
+    });
+    el.addEventListener('submit', async e => {
+      e.preventDefault(); const nm = el.querySelector('[data-name]').value.trim(); if (!nm) return;
+      store.set('cy.author', nm);
+      try { const j = await api('quiz', {name:nm, score, total:10}); say(j.rank ? `ส่งคะแนนแล้ว ตอนนี้อยู่อันดับ ${j.rank}` : 'ส่งคะแนนแล้ว'); e.target.remove(); board(); } catch(err) { say(err.message, 1); }
+    });
+    intro();
+  }
+
+  // ======================= ตรวจรับสนามหน้างาน =======================
+  function check(el){
+    const SP = SPX();
+    const st = load('cy.check', {sport:'basketball', L:28, W:15, s1:'', s2:'', e1:'', e2:'', d1:'', d2:'', tol:25, lv:Array(9).fill(''), smax:'', proj:''});
+    if (!SP[st.sport]) st.sport = 'basketball';
+    const say = msgIn(el), save = () => store.set('cy.check', JSON.stringify(st));
+    const inp = (k, label, unit, o = {}) => `<label class="dz-f${o.full ? ' full' : ''}"><span>${label}${unit ? `<em>${unit}</em>` : ''}</span><input ${o.text ? 'type="text"' : 'type="number" step="any" inputmode="decimal"'} data-k="${k}" value="${esc(st[k])}"${o.ph ? ` placeholder="${esc(o.ph)}"` : ''}></label>`;
+    el.innerHTML = head('INSPECT', 'Field Check', 'ตรวจรับสนามหน้างาน', 'กรอกค่าที่วัดจริงด้วยเทปหรือกล้องสำรวจ ระบบตรวจขนาดกับกติกา ความเป็นมุมฉากจากเส้นทแยง และความลาดจากระดับ 9 จุด แล้วสรุปเป็นรายงาน') +
+      `<p class="dz-warn"><b>ค่าคลาดเคลื่อน</b>กติกาส่วนใหญ่ไม่กำหนดค่าคลาดเคลื่อนของงานก่อสร้าง ให้ใช้ค่าตามข้อกำหนดโครงการ เกณฑ์ปฐมภูมิที่พบในเล่มมีเฉพาะหญ้าเทียมฟุตบอล คือขอบสนาม ±25 mm และตำแหน่งเส้น ±50 mm</p>
+      <section class="dz"><div class="dz-form" data-form></div><div class="dz-out" data-out></div></section>`;
+    const form = el.querySelector('[data-form]'), out = el.querySelector('[data-out]');
+    function formHTML(){
+      return `<div class="dz-step"><h3><i>01</i>สนามที่ตรวจ</h3><div class="dz-g">
+          <label class="dz-f full"><span>ประเภทกีฬา</span><select data-k="sport">${sportOpts(st.sport)}</select></label>
+          ${inp('L', 'ความยาวตามแบบ', 'm')}${inp('W', 'ความกว้างตามแบบ', 'm')}${inp('tol', 'ค่าคลาดเคลื่อนที่ยอมรับ', 'mm')}${inp('smax', 'ความลาดสูงสุดที่ยอม', '%', {ph:'ตามกติกา'})}
+          ${inp('proj', 'ชื่อโครงการ / สถานที่', '', {text:1, full:1})}</div></div>
+        <div class="dz-step"><h3><i>02</i>ค่าที่วัดได้</h3><div class="tl-fig">${figSVG()}</div><div class="dz-g">
+          ${inp('s1', 'เส้นข้าง AB', 'm')}${inp('s2', 'เส้นข้าง DC', 'm')}${inp('e1', 'เส้นหลัง AD', 'm')}${inp('e2', 'เส้นหลัง BC', 'm')}
+          ${inp('d1', 'ทแยงมุม AC', 'm')}${inp('d2', 'ทแยงมุม BD', 'm')}</div></div>
+        <div class="dz-step"><h3><i>03</i>ระดับผิว 9 จุด <span class="dz-cnt">(ไม่บังคับ)</span></h3><div class="tl-lv">${st.lv.map((v, k) => `<input type="number" step="any" inputmode="decimal" data-lv="${k}" value="${esc(v)}" placeholder="${'ABC'[k / 3 | 0]}${k % 3 + 1}" aria-label="ระดับจุด ${'ABC'[k / 3 | 0]}${k % 3 + 1}">`).join('')}</div>
+          <p class="dz-note">ใส่ระดับ (m) แถวบนคือแนวเส้นข้าง AB แถวกลางคือแนวกึ่งกลาง แถวล่างคือแนวเส้นข้าง DC แต่ละแถวเรียงจากปลาย A ไปปลาย B</p>
+          <div class="dz-btns"><button class="dz-add" data-act="sample">ใส่ค่าตัวอย่าง</button><button class="dz-add" data-act="clear">ล้างค่าที่วัด</button></div></div>`;
+    }
+    function figSVG(){
+      return `<svg viewBox="0 0 260 130" class="dz-svg" role="img" aria-label="ตำแหน่งจุด A B C D"><rect x="30" y="20" width="200" height="90" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M30 20 230 110M230 20 30 110" stroke="#7b3fe4" stroke-dasharray="5 4" fill="none"/>
+        ${[['A', 18, 16], ['B', 236, 16], ['C', 236, 124], ['D', 18, 124]].map(([t, x, y]) => `<text x="${x}" y="${y}" font-size="13" font-weight="700" fill="currentColor" font-family="JetBrains Mono,monospace">${t}</text>`).join('')}
+        <text x="130" y="14" text-anchor="middle" font-size="11" fill="currentColor" font-family="JetBrains Mono,monospace">ยาว L</text><text x="22" y="68" text-anchor="end" font-size="11" fill="currentColor" font-family="JetBrains Mono,monospace">W</text></svg>`;
+    }
+    function evaluate(){
+      const sp = SP[st.sport], tol = (num(st.tol) || 0) / 1000, L = num(st.L), W = num(st.W), r = [];
+      const add = (t, m, s) => r.push({t, m, s});
+      const mm = v => (v >= 0 ? '+' : '') + Math.round(v * 1000) + ' mm';
+      if (!(L > 0 && W > 0)) return [{t:'info', m:'ใส่ขนาดตามแบบก่อน'}];
+      if (sp.fixed && (Math.abs(L - sp.L) > 1e-6 || Math.abs(W - sp.W) > 1e-6)) add('warn', `ขนาดตามแบบ ${L} × ${W} m ไม่ตรงกับกติกา ${sp.L} × ${sp.W} m`);
+      if (sp.rng) { const [[a, b], [c, d]] = sp.rng; if (L < a || L > b || W < c || W > d) add('warn', `ขนาดตามแบบอยู่นอกช่วงที่กติกายอม`); }
+      [['s1', L, 'เส้นข้าง AB'], ['s2', L, 'เส้นข้าง DC'], ['e1', W, 'เส้นหลัง AD'], ['e2', W, 'เส้นหลัง BC']].forEach(([k, d, n]) => {
+        const v = num(st[k]); if (v === null) return; const e = v - d;
+        add(Math.abs(e) <= tol + 1e-9 ? 'ok' : 'bad', `${n} วัดได้ ${f(v, 3)} m (แบบ ${f(d, 3)} m) ต่าง ${mm(e)}`, `ยอมได้ ±${Math.round(tol * 1000)} mm`);
+      });
+      const pair = (a, b, n) => { const x = num(st[a]), y = num(st[b]); if (x === null || y === null) return; const e = x - y;
+        add(Math.abs(e) <= tol + 1e-9 ? 'ok' : 'bad', `${n} ต่างกัน ${mm(e)}`, `${f(x, 3)} กับ ${f(y, 3)} m`); };
+      pair('s1', 's2', 'เส้นข้างสองฝั่ง'); pair('e1', 'e2', 'เส้นหลังสองฝั่ง');
+      const d1 = num(st.d1), d2 = num(st.d2);
+      if (d1 !== null && d2 !== null) {
+        const e = d1 - d2; add(Math.abs(e) <= tol + 1e-9 ? 'ok' : 'bad', `ทแยงมุม AC กับ BD ต่างกัน ${mm(e)} ${Math.abs(e) <= tol + 1e-9 ? '→ ผังเป็นมุมฉาก' : '→ ผังเบี้ยว ไม่เป็นมุมฉาก'}`, 'สี่เหลี่ยมผืนผ้าต้องมีทแยงมุมยาวเท่ากัน (หัวข้อ 2.6)');
+        const dt = Math.hypot(L, W), dm = (d1 + d2) / 2; add(Math.abs(dm - dt) <= tol * 1.5 + 1e-9 ? 'ok' : 'warn', `ทแยงมุมเฉลี่ย ${f(dm, 3)} m เทียบค่าตามแบบ √(L² + W²) = ${f(dt, 3)} m ต่าง ${mm(dm - dt)}`);
+      }
+      const z = st.lv.map(num);
+      if (z.filter(v => v !== null).length >= 4) {
+        const at = (rr, c) => z[rr * 3 + c];
+        let sl = 0, sw = 0;
+        for (let rr = 0; rr < 3; rr++) { const a = at(rr, 0), b = at(rr, 2); if (a !== null && b !== null) sl = Math.max(sl, Math.abs(b - a) / L * 100); }
+        for (let c = 0; c < 3; c++) { const a = at(0, c), b = at(2, c); if (a !== null && b !== null) sw = Math.max(sw, Math.abs(b - a) / W * 100); }
+        const zs = z.filter(v => v !== null), rng = Math.max(...zs) - Math.min(...zs);
+        let lim = num(st.smax), src = 'ค่าที่กำหนดเอง';
+        if (lim === null) { if (sp.slope) { lim = sp.slope.max; src = 'กติกา ' + sp.n; } else if (sp.maxSlope) { lim = sp.maxSlope; src = 'กติกา ' + sp.n + ' (กลางแจ้ง)'; } else if (sp.user && sp.sl && sp.sl.max !== null) { lim = sp.sl.max; src = 'กติกาที่สร้างเอง'; } }
+        const res = Math.hypot(sl, sw);
+        add(lim === null ? 'info' : res <= lim + 1e-9 ? 'ok' : 'bad', `ความลาดตามยาวสูงสุด ${f(sl)}% ตามขวางสูงสุด ${f(sw)}% รวมประมาณ ${f(res)}%`, lim === null ? 'กติกาไม่กำหนดตัวเลข ใส่ค่าที่ยอมในขั้นที่ 01 เพื่อให้ระบบตรวจ' : `เกณฑ์ ≤ ${lim}% (${src})`);
+        if (sp.slope) add(sl <= sp.slope.l + 1e-9 && sw <= sp.slope.c + 1e-9 ? 'ok' : 'bad', `เกณฑ์แยกทิศของ${sp.n}: ตามยาว ≤ ${sp.slope.l}% ตามขวาง ≤ ${sp.slope.c}%`);
+        add('info', `ระดับสูงสุดต่างจากต่ำสุด ${Math.round(rng * 1000)} mm`);
+      }
+      if (['s1', 's2', 'e1', 'e2', 'd1', 'd2'].every(k => num(st[k]) === null) && z.filter(v => v !== null).length < 4) add('info', 'ใส่ค่าที่วัดได้ในขั้นที่ 02 หรือระดับในขั้นที่ 03 เพื่อเริ่มตรวจ');
+      return r;
+    }
+    function render(){
+      const r = evaluate(), tag = {ok:'ผ่าน', bad:'ไม่ผ่าน', warn:'ระวัง', info:'ข้อมูล'}, nb = r.filter(x => x.t === 'bad').length, nk = r.filter(x => x.t === 'ok').length;
+      out.innerHTML = `<div class="dz-panel"><div class="dz-ph"><span class="n">/A</span><h3>ผลการตรวจรับ</h3><span class="r">${nk} ผ่าน · ${nb} ไม่ผ่าน</span></div>
+        <div class="tl-verdict ${nb ? 'bad' : nk ? 'ok' : ''}">${nb ? 'ยังไม่ผ่าน ต้องแก้ไขก่อนรับมอบ' : nk ? 'ผ่านทุกรายการที่ตรวจ' : 'รอข้อมูลที่วัดได้'}</div>
+        <ul class="dz-checks">${r.map(c => `<li class="${c.t}"><span class="t">${tag[c.t]}</span><span>${esc(c.m)}${c.s ? `<small>${esc(c.s)}</small>` : ''}</span></li>`).join('')}</ul>
+        <div class="dz-btns" style="margin-top:12px"><button class="bk vio" data-act="copy">คัดลอกรายงาน</button></div>
+        <p class="dz-note">รายงานนี้ช่วยตรวจเบื้องต้น การรับมอบงานจริงใช้ผลวัดของผู้ควบคุมงานและเกณฑ์ในสัญญา ดูขั้นตอนส่งมอบใน<a href="#/c24">บทที่ 24</a>และบทของกีฬานั้น</p></div>`;
+      out._r = r;
+    }
+    function report(){
+      const r = out._r || evaluate(), sp = SP[st.sport], tag = {ok:'[ผ่าน]', bad:'[ไม่ผ่าน]', warn:'[ระวัง]', info:'[ข้อมูล]'};
+      return [`รายงานตรวจรับสนาม${sp.n}${st.proj ? ' · ' + st.proj : ''}`, `วันที่ ${new Date().toLocaleDateString('th-TH', {dateStyle:'long'})}`, `ขนาดตามแบบ ${st.L} × ${st.W} m · ค่าคลาดเคลื่อน ±${st.tol} mm`, '',
+        ...r.map(c => `${tag[c.t]} ${c.m}${c.s ? ' (' + c.s + ')' : ''}`), '', 'สร้างจาก fieldstd · คู่มือมาตรฐานสนามกีฬา'].join('\n');
+    }
+    form.innerHTML = formHTML(); render();
+    el.addEventListener('input', e => {
+      const t = e.target;
+      if (t.dataset.lv !== undefined) st.lv[+t.dataset.lv] = t.value;
+      else if (t.dataset.k) {
+        st[t.dataset.k] = t.value;
+        if (t.dataset.k === 'sport') { const sp = SP[t.value]; st.L = sp.L + 2 * (sp.ig || 0); st.W = sp.W; st.smax = ''; form.innerHTML = formHTML(); }
+      }
+      save(); render();
+    });
+    el.addEventListener('click', e => {
+      const b = e.target.closest('[data-act]'); if (!b) return;
+      if (b.dataset.act === 'copy') copyText(report(), say);
+      if (b.dataset.act === 'clear') { ['s1', 's2', 'e1', 'e2', 'd1', 'd2'].forEach(k => st[k] = ''); st.lv = Array(9).fill(''); save(); form.innerHTML = formHTML(); render(); }
+      if (b.dataset.act === 'sample') {
+        const L = +st.L, W = +st.W, j = v => +(v).toFixed(3);
+        Object.assign(st, {s1:j(L + .008), s2:j(L - .006), e1:j(W + .004), e2:j(W - .003), d1:j(Math.hypot(L, W) + .009), d2:j(Math.hypot(L, W) - .007)});
+        st.lv = [0, 1, 2, 3, 4, 5, 6, 7, 8].map(k => j(100 + (k % 3) * L * .001 / 2 + (k / 3 | 0) * W * .003 / 2));
+        save(); form.innerHTML = formHTML(); render(); say('ใส่ค่าตัวอย่างแล้ว ค่าเหล่านี้สมมติขึ้นเพื่อทดลองใช้');
+      }
+    });
+  }
+
+  // ======================= วางผังหลายสนาม =======================
+  function site(el){
+    const A = FD.api, SP = A.SP;
+    const st = load('cy.site', {W:120, H:80, gap:3, items:[], sel:-1});
+    st.items = st.items.filter(it => SP[it.k]);
+    const say = msgIn(el), save = () => store.set('cy.site', JSON.stringify(st));
+    const fp = it => { const sp = SP[it.k], L = sp.L + 2 * (sp.ig || 0), P = L + 2 * sp.re, Q = sp.W + 2 * sp.rs; return it.r ? {P:Q, Q:P, P0:P, Q0:Q, L, sp} : {P, Q, P0:P, Q0:Q, L, sp}; };
+    const box = it => { const d = fp(it); return {x0:it.x - d.P / 2, x1:it.x + d.P / 2, y0:it.y - d.Q / 2, y1:it.y + d.Q / 2}; };
+    function issues(){
+      const bad = new Set(), notes = [], g = +st.gap || 0;
+      st.items.forEach((it, i) => { const b = box(it); if (b.x0 < -1e-6 || b.y0 < -1e-6 || b.x1 > st.W + 1e-6 || b.y1 > st.H + 1e-6) { bad.add(i); notes.push(`${i + 1}. ${SP[it.k].n} ล้นแนวเขตที่ดิน`); } });
+      for (let i = 0; i < st.items.length; i++) for (let j = i + 1; j < st.items.length; j++) {
+        const a = box(st.items[i]), b = box(st.items[j]);
+        if (a.x0 < b.x1 + g - 1e-6 && b.x0 < a.x1 + g - 1e-6 && a.y0 < b.y1 + g - 1e-6 && b.y0 < a.y1 + g - 1e-6) { bad.add(i); bad.add(j); notes.push(`${i + 1}. ${SP[st.items[i].k].n} กับ ${j + 1}. ${SP[st.items[j].k].n} ${a.x0 < b.x1 && b.x0 < a.x1 && a.y0 < b.y1 && b.y0 < a.y1 ? 'ทับกัน' : `ห่างกันน้อยกว่า ${g} m`}`); }
+      }
+      return {bad, notes};
+    }
+    el.innerHTML = head('SITE_PLAN', 'Site Plan', 'วางผังหลายสนามในที่ดินเดียว', 'ใส่ขนาดที่ดิน เพิ่มสนามที่ต้องการ แล้วลากจัดตำแหน่ง ระบบเตือนเมื่อสนามทับกัน ห่างน้อยเกินไป หรือล้นแนวเขต และรวมพื้นที่กับปริมาณงานหลักทั้งโครงการ') +
+      `<section class="dz tl-sitep"><div class="dz-form" data-form></div><div class="dz-out"><div class="dz-panel"><div class="dz-ph"><span class="n">/A</span><h3>ผังรวม</h3><span class="r" data-area></span></div><div data-plan></div>
+        <p class="dz-note">ลากสนามเพื่อย้าย (จับลงทุก 0.5 m) แตะสนามเพื่อเลือก แล้วหมุนหรือลบจากรายการด้านซ้าย ขนาดแต่ละสนามรวมระยะรอบตามค่าอ้างอิงของกีฬานั้น</p></div><div data-sum></div></div></section>`;
+    const form = el.querySelector('[data-form]'), plan = el.querySelector('[data-plan]'), sum = el.querySelector('[data-sum]');
+    function formHTML(){
+      return `<div class="dz-step"><h3><i>01</i>ที่ดิน</h3><div class="dz-g">
+          <label class="dz-f"><span>ด้านยาว<em>m</em></span><input type="number" step="1" min="5" data-k="W" value="${st.W}"></label>
+          <label class="dz-f"><span>ด้านกว้าง<em>m</em></span><input type="number" step="1" min="5" data-k="H" value="${st.H}"></label>
+          <label class="dz-f full"><span>ระยะห่างขั้นต่ำระหว่างสนาม (ทางเดิน)<em>m</em></span><input type="number" step=".5" min="0" data-k="gap" value="${st.gap}"></label></div>
+          <p class="dz-note">${f(st.W * st.H, 0)} m² = ${f(st.W * st.H / 1600, 2)} ไร่ (1 ไร่ = 1,600 m²)</p></div>
+        <div class="dz-step"><h3><i>02</i>เพิ่มสนาม</h3><div class="dz-g"><label class="dz-f full"><span>ประเภทกีฬา</span><select data-add>${sportOpts('basketball')}</select></label></div>
+          <div class="dz-btns" style="margin-top:8px"><button class="bk vio" data-act="add">+ เพิ่มสนาม</button><button class="dz-add" data-act="demo">ตัวอย่าง: โรงเรียน 1 ไร่</button><button class="dz-add" data-act="clear">ล้างผัง</button></div></div>
+        <div class="dz-step"><h3><i>03</i>สนามในผัง <span class="dz-cnt">${st.items.length} สนาม</span></h3>
+          <div class="tl-items">${st.items.map((it, i) => { const d = fp(it); return `<div class="tl-it${i === st.sel ? ' on' : ''}" data-pick="${i}"><b>${i + 1}</b><span>${esc(d.sp.n)}<small>${f(d.P, 1)} × ${f(d.Q, 1)} m</small></span>
+            <button data-act="rot" data-i="${i}" title="หมุน 90°">⟳</button><button data-act="dup" data-i="${i}" title="ทำสำเนา">⧉</button><button data-act="del" data-i="${i}" title="ลบ">×</button></div>`; }).join('') || '<p class="dz-note" style="margin:0">ยังไม่มีสนาม เลือกกีฬาแล้วกด “เพิ่มสนาม”</p>'}</div></div>`;
+    }
+    function planSVG(){
+      const m = 4, {bad} = issues(), A2 = A;
+      let s = `<svg class="dz-svg tl-site" viewBox="${-m} ${-m} ${st.W + 2 * m} ${st.H + 2 * m}" role="img" aria-label="ผังรวมหลายสนาม">`;
+      for (let x = 10; x < st.W; x += 10) s += `<line x1="${x}" y1="0" x2="${x}" y2="${st.H}" stroke="currentColor" stroke-width=".08" opacity=".25"/>`;
+      for (let y = 10; y < st.H; y += 10) s += `<line x1="0" y1="${y}" x2="${st.W}" y2="${y}" stroke="currentColor" stroke-width=".08" opacity=".25"/>`;
+      s += `<rect x="0" y="0" width="${st.W}" height="${st.H}" fill="none" stroke="currentColor" stroke-width=".35" stroke-dasharray="1.6 .8"/>`;
+      st.items.forEach((it, i) => {
+        const d = fp(it), sp = d.sp, surf = sp.surf, run = A2.RUN_COL[surf], play = A2.SURF_COL[surf], lw = Math.max(.12, sp.lw || .1);
+        s += `<g class="tl-fd${i === st.sel ? ' sel' : ''}" data-i="${i}" transform="translate(${it.x} ${it.y}) rotate(${it.r ? 90 : 0})">`;
+        s += `<rect x="${-d.P0 / 2}" y="${-d.Q0 / 2}" width="${d.P0}" height="${d.Q0}" fill="${run}" stroke="${bad.has(i) ? '#d8463a' : '#0b0b0c'}" stroke-width="${bad.has(i) ? .6 : .15}"/>`;
+        s += `<rect x="${-d.L / 2}" y="${-sp.W / 2}" width="${d.L}" height="${sp.W}" fill="${play}"/>`;
+        A2.marks(it.k, sp.L, sp.W, sp.ig || 0).forEach(p => {
+          if (p.net) return;
+          if (p.t === 'l') s += `<line x1="${p.x1}" y1="${p.y1}" x2="${p.x2}" y2="${p.y2}" stroke="#f7f7f4" stroke-width="${lw}"/>`;
+          else if (p.t === 'a') { if (p.a1 - p.a0 >= 359.9) s += `<circle cx="${p.cx}" cy="${p.cy}" r="${p.r}" fill="none" stroke="#f7f7f4" stroke-width="${lw}"/>`;
+            else { const r = Math.PI / 180, x0 = p.cx + p.r * Math.cos(p.a0 * r), y0 = p.cy + p.r * Math.sin(p.a0 * r), x1 = p.cx + p.r * Math.cos(p.a1 * r), y1 = p.cy + p.r * Math.sin(p.a1 * r);
+              s += `<path d="M${x0} ${y0}A${p.r} ${p.r} 0 ${p.a1 - p.a0 > 180 ? 1 : 0} 1 ${x1} ${y1}" fill="none" stroke="#f7f7f4" stroke-width="${lw}"/>`; } }
+        });
+        const fs = Math.max(1.4, Math.min(d.P0, d.Q0) * .16);
+        s += `<text x="0" y="${fs * .35}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="#fff" stroke="#0b0b0c" stroke-width="${fs * .12}" paint-order="stroke" transform="rotate(${it.r ? -90 : 0})" font-family="JetBrains Mono,monospace">${i + 1}</text></g>`;
+      });
+      s += `<text x="0" y="${st.H + 3}" font-size="2.2" fill="currentColor" font-family="JetBrains Mono,monospace">${st.W} × ${st.H} m</text></svg>`;
+      return s;
+    }
+    function sumHTML(){
+      const {notes} = issues(), by = {};
+      let pad = 0, play = 0, line = 0, ch = 0; const surf = {};
+      st.items.forEach(it => { const d = fp(it), sp = d.sp, k = sp.n; by[k] = by[k] || {n:0, P:d.P0, Q:d.Q0}; by[k].n++;
+        pad += d.P0 * d.Q0; play += d.L * sp.W; ch += 2 * (d.P0 + d.Q0);
+        line += A.marks(it.k, sp.L, sp.W, sp.ig || 0).reduce((a, p) => a + A.primLen(p), 0);
+        const sn = A.SF[sp.surf].n; surf[sn] = (surf[sn] || 0) + d.P0 * d.Q0; });
+      const site = st.W * st.H, cov = site ? pad / site * 100 : 0;
+      plan.parentNode.querySelector('[data-area]').textContent = `ใช้พื้นที่ ${f(cov, 1)}%`;
+      return `<div class="dz-panel"><div class="dz-ph"><span class="n">/B</span><h3>ผลตรวจผัง</h3><span class="r">${notes.length ? notes.length + ' จุดต้องแก้' : 'ไม่พบปัญหา'}</span></div>
+          <ul class="dz-checks">${notes.length ? notes.map(n => `<li class="bad"><span class="t">ไม่ผ่าน</span><span>${esc(n)}</span></li>`).join('') : `<li class="ok"><span class="t">ผ่าน</span><span>${st.items.length ? 'ทุกสนามอยู่ในที่ดิน ไม่ทับกัน และเว้นระยะตามที่กำหนด' : 'ยังไม่มีสนามในผัง'}</span></li>`}
+          ${cov > 70 ? `<li class="warn"><span class="t">ระวัง</span><span>สนามใช้พื้นที่ ${f(cov, 1)}% ของที่ดิน อาจเหลือที่ไม่พอสำหรับทางเดิน ที่จอดรถ อาคารประกอบ และระบบระบายน้ำ</span></li>` : ''}</ul></div>
+        <div class="dz-panel"><div class="dz-ph"><span class="n">/C</span><h3>สรุปพื้นที่และปริมาณงานหลัก</h3></div>
+          <div class="dz-kpi"><div><small>ที่ดิน</small><b>${f(site, 0)}<u>m²</u></b></div><div><small>แผ่นสนามรวม</small><b>${f(pad, 0)}<u>m²</u></b></div><div><small>พื้นที่เล่นรวม</small><b>${f(play, 0)}<u>m²</u></b></div><div><small>ใช้พื้นที่</small><b>${f(cov, 1)}<u>%</u></b></div></div>
+          <div class="dz-tw" style="margin-top:12px"><table><thead><tr><th>สนาม</th><th>จำนวน</th><th>ขนาดรวมระยะรอบ (m)</th><th>พื้นที่ (m²)</th></tr></thead><tbody>
+            ${Object.entries(by).map(([k, v]) => `<tr><td>${esc(k)}</td><td class="num">${v.n}</td><td class="num">${f(v.P, 2)} × ${f(v.Q, 2)}</td><td class="num">${f(v.n * v.P * v.Q, 0)}</td></tr>`).join('') || '<tr><td colspan="4">–</td></tr>'}</tbody></table></div>
+          <div class="dz-tw" style="margin-top:12px"><table><thead><tr><th>ปริมาณงานหลัก (ประมาณ)</th><th>ปริมาณ</th><th>หน่วย</th></tr></thead><tbody>
+            ${Object.entries(surf).map(([k, v]) => `<tr><td>ผิวสนาม ${esc(k)}</td><td class="num">${f(v, 0)}</td><td>m²</td></tr>`).join('')}
+            <tr><td>เส้นสนามยาวรวม</td><td class="num">${f(line, 1)}</td><td>m</td></tr><tr><td>รางระบายน้ำรอบแผ่นสนาม (คิดแยกทุกสนาม)</td><td class="num">${f(ch, 1)}</td><td>m</td></tr></tbody></table></div>
+          <p class="dz-note">ตัวเลขนี้ใช้ประมาณขนาดโครงการ ถ้าต้องการงานดิน ระบายน้ำ และ BOQ ละเอียดของแต่ละสนาม ให้เปิด<a href="#/design">โหมดออกแบบ</a></p></div>`;
+    }
+    function paintAll(){ form.innerHTML = formHTML(); plan.innerHTML = planSVG(); sum.innerHTML = sumHTML(); save(); }
+    function place(k){
+      const it = {k, x:0, y:0, r:0}, d = fp(it), g = +st.gap || 0;
+      for (const r of [0, 1]) { it.r = r; const e = fp(it);
+        for (let y = e.Q / 2; y <= st.H - e.Q / 2 + 1e-6; y += .5) for (let x = e.P / 2; x <= st.W - e.P / 2 + 1e-6; x += .5) {
+          it.x = x; it.y = y; const b = box(it);
+          if (st.items.every(o => { const c = box(o); return !(b.x0 < c.x1 + g && c.x0 < b.x1 + g && b.y0 < c.y1 + g && c.y0 < b.y1 + g); })) return it;
+        } }
+      it.r = 0; it.x = st.W / 2; it.y = st.H / 2; say(`ที่ดินไม่พอวาง${d.sp.n}โดยไม่ทับสนามอื่น วางไว้กลางที่ดินก่อน`, 1); return it;
+    }
+    el.addEventListener('input', e => { const t = e.target; if (!t.dataset.k) return; const v = num(t.value); if (v === null || v < 0) return; st[t.dataset.k] = v; plan.innerHTML = planSVG(); sum.innerHTML = sumHTML(); save();
+      const p = form.querySelector('.dz-step .dz-note'); if (p) p.textContent = `${f(st.W * st.H, 0)} m² = ${f(st.W * st.H / 1600, 2)} ไร่ (1 ไร่ = 1,600 m²)`; });
+    el.addEventListener('click', e => {
+      const p = e.target.closest('[data-pick]'), b = e.target.closest('[data-act]');
+      if (b) {
+        const a = b.dataset.act, i = +b.dataset.i;
+        if (a === 'add') { st.items.push(place(form.querySelector('[data-add]').value)); st.sel = st.items.length - 1; }
+        if (a === 'rot') { st.items[i].r = st.items[i].r ? 0 : 1; st.sel = i; }
+        if (a === 'dup') { const c = place(st.items[i].k); c.r = st.items[i].r; st.items.push(c); st.sel = st.items.length - 1; }
+        if (a === 'del') { st.items.splice(i, 1); st.sel = -1; }
+        if (a === 'clear') { if (!armed(b, 'กดอีกครั้งเพื่อล้าง')) return; st.items = []; st.sel = -1; }
+        if (a === 'demo') { Object.assign(st, {W:40, H:40, gap:2, items:[], sel:-1}); ['basketball', 'badminton', 'badminton', 'petanque', 'petanque'].forEach(k => SP[k] && st.items.push(place(k))); say('ตัวอย่างที่ดิน 40 × 40 m (1 ไร่) วางบาสเกตบอล แบดมินตัน 2 สนาม และเปตอง 2 ช่อง'); }
+        return paintAll();
+      }
+      if (p) { st.sel = +p.dataset.pick; paintAll(); }
+    });
+    // ลากสนามบนผัง
+    let drag = null;
+    plan.addEventListener('pointerdown', e => {
+      const gEl = e.target.closest('.tl-fd'); if (!gEl) return;
+      const svg = plan.querySelector('svg'), i = +gEl.dataset.i, pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
+      const q = pt.matrixTransform(svg.getScreenCTM().inverse());
+      drag = {i, svg, gEl, dx:q.x - st.items[i].x, dy:q.y - st.items[i].y, moved:false}; gEl.setPointerCapture(e.pointerId); st.sel = i;
+      plan.querySelectorAll('.tl-fd').forEach(n => n.classList.toggle('sel', n === gEl));
+    });
+    plan.addEventListener('pointermove', e => {
+      if (!drag) return; const pt = drag.svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
+      const q = pt.matrixTransform(drag.svg.getScreenCTM().inverse()), it = st.items[drag.i];
+      it.x = Math.round((q.x - drag.dx) * 2) / 2; it.y = Math.round((q.y - drag.dy) * 2) / 2; drag.moved = true;
+      drag.gEl.setAttribute('transform', `translate(${it.x} ${it.y}) rotate(${it.r ? 90 : 0})`);
+    });
+    const end = () => { if (!drag) return; drag = null; paintAll(); };
+    plan.addEventListener('pointerup', end); plan.addEventListener('pointercancel', end);
+    paintAll();
+  }
+
+  // ======================= เครื่องคิดเลข =======================
+  function calc(el){
+    const st = load('cy.calc', {L:105, W:68, C:.5, i:100, A:8740, b:.3, y:.15, S:.5, n:.013, A1:12, A2:18, D:20, gf:1.80, gm:1.90, sp:1, sl:100, ar:600, th:.15, wa:5});
+    const save = () => store.set('cy.calc', JSON.stringify(st));
+    const v = k => num(st[k]) ?? 0;
+    const inp = (k, label, unit) => `<label class="dz-f"><span>${label}${unit ? `<em>${unit}</em>` : ''}</span><input type="number" step="any" inputmode="decimal" data-k="${k}" value="${esc(st[k])}"></label>`;
+    const CARDS = [
+      ['มุมฉากและทแยงมุม', '2.6', () => inp('L', 'ยาว L', 'm') + inp('W', 'กว้าง W', 'm'), () => { const d = Math.hypot(v('L'), v('W')); return `d = √(L² + W²) = <b>${f(d, 3)} m</b><br>วัดทแยงมุมทั้งสองเส้นต้องได้ค่านี้เท่ากัน`; }],
+      ['น้ำฝนสูงสุด (Rational Method)', '2.4', () => inp('C', 'ค่า C', '') + inp('i', 'ความเข้มฝน i', 'mm/h') + inp('A', 'พื้นที่รับน้ำ', 'm²'), () => { const ha = v('A') / 1e4, q = v('C') * v('i') * ha / 360; return `A = ${f(ha, 4)} ha<br>Q = C·i·A / 360 = <b>${f(q, 4)} m³/s</b> (${f(q * 1000, 1)} L/s)`; }],
+      ['รางสี่เหลี่ยม (สมการแมนนิง)', '2.4', () => inp('b', 'กว้างราง b', 'm') + inp('y', 'ลึกน้ำ y', 'm') + inp('S', 'ลาดท้องราง', '%') + inp('n', 'ค่า n', ''), () => {
+        const A = v('b') * v('y'), P = v('b') + 2 * v('y'), R = P ? A / P : 0, V = v('n') ? Math.pow(R, 2 / 3) * Math.sqrt(v('S') / 100) / v('n') : 0;
+        return `A = ${f(A, 4)} m² · R = ${f(R, 4)} m<br>V = (1/n)·R<sup>2/3</sup>·S<sup>1/2</sup> = <b>${f(V, 2)} m/s</b><br>Q = A·V = <b>${f(A * V * 1000, 1)} L/s</b>`; }],
+      ['ปริมาตรดิน (พื้นที่หน้าตัดเฉลี่ย)', '2.2', () => inp('A1', 'หน้าตัด A₁', 'm²') + inp('A2', 'หน้าตัด A₂', 'm²') + inp('D', 'ระยะห่าง L', 'm'), () => `V = (A₁ + A₂) / 2 × L = <b>${f((v('A1') + v('A2')) / 2 * v('D'), 1)} m³</b><br>ยังไม่คิดการหดหรือขยายตัวของดิน`],
+      ['การบดอัด (RC)', '2.3', () => inp('gf', 'γd ในสนาม', 't/m³') + inp('gm', 'γd สูงสุด', 't/m³'), () => `RC = γd สนาม ÷ γd สูงสุด × 100 = <b>${f(v('gm') ? v('gf') / v('gm') * 100 : 0, 1)}%</b><br>เทียบเกณฑ์ในรายการประกอบแบบของโครงการ`],
+      ['ความลาด', '2.4', () => inp('sp', 'ความลาด', '%') + inp('sl', 'ระยะทาง', 'm'), () => { const p = v('sp'); return `${f(p, 2)}% = 1 : ${p ? f(100 / p, 0) : '∞'} = ${f(Math.atan(p / 100) * 180 / Math.PI, 3)}°<br>ระดับต่างกันตลอดระยะ = <b>${f(p / 100 * v('sl') * 1000, 0)} mm</b>`; }],
+      ['ปริมาณวัสดุชั้นโครงสร้าง', '24', () => inp('ar', 'พื้นที่', 'm²') + inp('th', 'ความหนา', 'm') + inp('wa', 'เผื่อสูญเสีย', '%'), () => { const V = v('ar') * v('th'); return `ปริมาตรตามแบบ = ${f(V, 2)} m³<br>รวมเผื่อ ${f(v('wa'), 0)}% = <b>${f(V * (1 + v('wa') / 100), 2)} m³</b>`; }]
+    ];
+    el.innerHTML = head('CALC', 'Calculators', 'เครื่องคิดเลขงานสนาม', 'สูตรจากบทที่ 2 และบทที่ 24 แยกเป็นชิ้น คำนวณทันทีที่พิมพ์ ค่าเริ่มต้นเป็นตัวอย่างจากในเล่ม') +
+      `<section class="tl-calc">${CARDS.map((c, k) => `<div class="tl-cc"><div class="dz-ph"><span class="n">/${String(k + 1).padStart(2, '0')}</span><h3>${c[0]}</h3><span class="r"><a href="#/${c[1] === '24' ? 'c24' : 'c2/c2-s' + c[1].split('.')[1]}">หัวข้อ ${c[1]}</a></span></div><div class="dz-g">${c[2]()}</div><div class="dz-calc" data-o="${k}" style="white-space:normal">${c[3]()}</div></div>`).join('')}</section>`;
+    el.addEventListener('input', e => { const t = e.target; if (!t.dataset.k) return; st[t.dataset.k] = t.value; save(); el.querySelectorAll('[data-o]').forEach(o => { o.innerHTML = CARDS[+o.dataset.o][3](); }); });
+  }
+
+  // ======================= English =======================
+  const EN = {c0:'Preface', c1:'Introduction, scope, units and the hierarchy of standards', c2:'Shared civil engineering principles', c3:'Football (11-a-side)', c4:'Tennis', c5:'Badminton', c6:'Basketball', c7:'Baseball', c8:'Pétanque', c9:'Futsal', c10:'Rugby', c11:'Sepak takraw', c12:'Motor racing circuit', c13:'Competition swimming pool', c14:'Athletics', c15:'Hockey', c16:'Volleyball and handball', c17:'Cricket', c18:'Golf', c19:'Skateboarding', c20:'Beach volleyball', c21:'Gymnastics hall', c22:'Cycling velodrome', c23:'Field comparison table', c24:'Worked quantity take-off (BOQ)', c25:'Sources, verification limits and unconfirmed data'};
+  const TOOLS_EN = {design:['Field designer', 'Lay out one field on your site: rule checks, balanced cut and fill, drainage sizing and a bill of quantities. Create your own sport and rules.'],
+    gallery:['Gallery', 'Browse fields other users designed and chose to publish. Like them or open one as a starting point.'],
+    site:['Multi-field site plan', 'Drag several fields onto one plot. Overlaps, spacing and site boundaries are checked live.'],
+    check:['Field inspection', 'Enter as-built measurements (sides, diagonals, nine levels) and get a pass/fail report.'],
+    calc:['Calculators', 'Diagonals, rational-method runoff, Manning channel flow, cut and fill, compaction, slope and material volume.'],
+    quiz:['Quiz', 'Ten easy questions per round from the handbook, with instant answers and a weekly leaderboard.']};
+  function en(el, ctx){
+    const D = ctx.D, sp = D.chapters.filter(c => +c.num >= 3 && +c.num <= 22), other = D.chapters.filter(c => !(+c.num >= 3 && +c.num <= 22));
+    const li = c => `<li><a href="#/${c.id}"><span>${c.num ? 'Ch. ' + c.num : '—'}</span>${esc(EN[c.id] || c.short)}</a></li>`;
+    el.innerHTML = `<section class="dz-top" lang="en"><div><span class="lbl vi">/ENGLISH · OVERVIEW</span><h1>Field Standards<span>Sports field dimensions and civil works, in one handbook</span></h1>
+        <p>A Thai-language handbook that collects the playing dimensions of 20 sports from federation rules, and the civil engineering needed to build them: setting out, earthworks, compaction, drainage, pavement layers and quantities. Every key number is traced to its source document, and computed or interpreted values are labelled as such.</p></div>
+        <div class="dz-acts"><a class="bk vio" href="#/design">Open the designer ${ARW}</a><a class="bk ghost" href="#/sports" data-jump="sports">Browse sports</a></div></section>
+      <p class="dz-warn" lang="en"><b>Language</b>The chapters are written in Thai. Your browser’s translate feature (for example “Translate to English” in Chrome or Safari) works well on the chapter pages. Numbers, units and drawings read the same in any language.</p>
+      <section class="tl-en" lang="en">
+        <div><h3>What is inside</h3><ul class="tl-pts"><li><b>20 sports</b> from football to velodromes, each with rule dimensions, line and equipment data, CAD set-out coordinates and an interactive 3D model.</li>
+          <li><b>Civil engineering core</b> (chapter 2): survey sequence, average-end-area earthworks, relative compaction, rational-method runoff with Thai rainfall data, Manning flow, layer principles and the relevant Thai building laws.</li>
+          <li><b>Practice</b>: a comparison table of all fields and a worked bill-of-quantities example.</li>
+          <li><b>Honest gaps</b>: data that could not be verified from the original documents is listed, with reasons, instead of guessed.</li></ul>
+          <p class="dz-note">For learning and early design only. It does not replace drawings designed and signed by a licensed engineer, and federation rules change, so always check the edition in force.</p></div>
+        <div><h3>Tools</h3><div class="tl-hub tl-hub-en">${Object.entries(TOOLS_EN).map(([k, [t, d]]) => `<a class="tl-card" href="#/${k}"><b>${t}</b><span>${d}</span><i>${ARW}</i></a>`).join('')}</div></div>
+        <div><h3>Sports chapters</h3><ul class="tl-chs">${sp.map(li).join('')}</ul></div>
+        <div><h3>Engineering and appendices</h3><ul class="tl-chs">${other.map(li).join('')}</ul><p class="dz-note">${esc(D.byline)}</p></div>
+      </section>`;
+  }
+
+  const PAGES = {tools:[hub, 'เครื่องมือทั้งหมด', '🧰'], gallery:[gallery, 'แกลเลอรีสนาม', '🖼️'], quiz:[quiz, 'แบบฝึกหัด', '📝'], check:[check, 'ตรวจรับสนามหน้างาน', '📏'], site:[site, 'วางผังหลายสนาม', '🗺️'], calc:[calc, 'เครื่องคิดเลขงานสนาม', '🧮'], en:[en, 'English overview', '🌐']};
+  return {
+    has: k => !!PAGES[k],
+    title: k => PAGES[k][2] + ' ' + PAGES[k][1],
+    render(k, el, ctx){ el.innerHTML = ''; const host = document.createElement('div'); host.className = 'tl'; el.appendChild(host); PAGES[k][0](host, ctx || {}); },
+    _Q: Q
+  };
 })();
 
 </script>
@@ -7729,9 +8428,9 @@ function renderHome(jump){
     <div class="sec-h" style="padding:0 30px"><span class="n">/03</span><h2>เลือกกีฬา</h2><span class="r">${sports.length} MODULES</span></div>
     <div class="grid" style="padding:0 30px">${sports.map(spCard).join('')}</div>
   </section>
-  <section class="sec"><div class="sec-h"><span class="n">/DZ</span><h2>โหมดออกแบบสนาม</h2><span class="r">FIELD_DESIGNER</span></div>
-    <div class="dz-promo"><div><span class="lbl vi">ใหม่</span><h3>ออกแบบสนาม<br>ของคุณเอง</h3><p>เลือกกีฬา ใส่ขนาดที่ดินและระดับดินเดิม แล้วให้ระบบวางผัง ตรวจกับกติกา หาระดับดินตัด-ถม ออกแบบรางระบายน้ำ และถอดปริมาณงาน ด้วยสูตรวิศวกรรมโยธาจากบทที่ 2</p><a class="bk vio" href="#/design">เปิดโหมดออกแบบ ${ARW}</a></div>
-      <ul><li><b>01</b>ผังสนามบนที่ดิน + ทิศ + ระยะรอบ</li><li><b>02</b>ตรวจขนาดและความลาดกับกติกา</li><li><b>03</b>ระดับสนาม ดินตัด-ถมสมดุล รูปตัด</li><li><b>04</b>Rational Method + รางตามสมการแมนนิง</li><li><b>05</b>พิกัดวางผัง และ BOQ ส่งออก CSV</li></ul></div>
+  <section class="sec"><div class="sec-h"><span class="n">/DZ</span><h2>เครื่องมือ</h2><span class="r">7 TOOLS</span></div>
+    <div class="dz-promo"><div><span class="lbl vi">ใหม่</span><h3>ลงมือทำ<br>ไม่ใช่แค่อ่าน</h3><p>ออกแบบสนามของคุณเองแล้วแชร์ลงแกลเลอรี วางหลายสนามในที่ดินเดียว ตรวจรับสนามจากค่าที่วัดจริง ใช้เครื่องคิดเลขงานสนาม หรือลองทำแบบฝึกหัดจากเนื้อหาในเล่ม</p><div class="hero-cta"><a class="bk vio" href="#/design">ออกแบบสนาม ${ARW}</a><a class="bk ghost" href="#/tools">ดูเครื่องมือทั้งหมด</a></div></div>
+      <ul><li><b>01</b><a href="#/design">ออกแบบสนาม + สร้างกีฬาและกติกาเอง</a></li><li><b>02</b><a href="#/gallery">แกลเลอรีสนามที่คนอื่นออกแบบ</a></li><li><b>03</b><a href="#/site">วางผังหลายสนามในที่ดินเดียว</a></li><li><b>04</b><a href="#/check">ตรวจรับสนามหน้างาน</a></li><li><b>05</b><a href="#/calc">เครื่องคิดเลขงานสนาม</a></li><li><b>06</b><a href="#/quiz">แบบฝึกหัด 10 ข้อ</a></li><li><b>07</b><a href="#/en">English overview</a></li></ul></div>
   </section>
   <section class="sec"><div class="sec-h"><span class="n">/04</span><h2>งานวิศวกรรม และภาคผนวก</h2><span class="r">${others.length} DOCS</span></div>
     <div class="eng">${others.map(c => { const m = meta(c); return `<a class="eg" href="#/${c.id}"><span class="e">${m.e}</span><span><span class="no mono">/${c.num ? pad(c.num) : '--'} ${m.code}</span><br><span class="t">${esc(c.short)}</span></span></a>`; }).join('')}</div>
@@ -7813,7 +8512,8 @@ function footer(){
     <div><button class="logo" style="padding:0;border:0" onclick="location.hash='#/'"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M2 2h7v7H2zM11 11h7v7h-7z" fill="currentColor"/><path d="M11 2h7v7h-7zM2 11h7v7H2z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>FIELD_STD<i></i></button>
       <div class="small">คู่มือมาตรฐานสนามกีฬาและการออกแบบก่อสร้าง<br>ตามหลักวิศวกรรมโยธา<br>${esc(D.byline)}</div></div>
     <div class="fsports"><h4>กีฬา · ${sports.length} MODULES</h4><div class="cols">${sports.map(ln).join('')}</div></div>
-    <div><h4>วิศวกรรม_ภาคผนวก</h4><a href="#/design">⚒️ โหมดออกแบบสนาม</a>${others.map(c => `<a href="#/${c.id}">${meta(c).e} ${esc(c.short)}</a>`).join('')}</div>
+    <div><h4>เครื่องมือ</h4><a href="#/design">⚒️ โหมดออกแบบสนาม</a><a href="#/gallery">🖼️ แกลเลอรีสนาม</a><a href="#/site">🗺️ วางผังหลายสนาม</a><a href="#/check">📏 ตรวจรับสนามหน้างาน</a><a href="#/calc">🧮 เครื่องคิดเลขงานสนาม</a><a href="#/quiz">📝 แบบฝึกหัด</a><a href="#/en">🌐 English</a>
+    <h4 style="margin-top:14px">วิศวกรรม_ภาคผนวก</h4>${others.map(c => `<a href="#/${c.id}">${meta(c).e} ${esc(c.short)}</a>`).join('')}</div>
   </section>
   <section class="status"><span><i class="dot"></i>Offline ready</span><a href="#/sports" data-jump="sports">&gt; เลือกกีฬา_</a><span class="rt"><span>CH: ${pad(D.chapters.filter(c => c.num).length)}</span><span class="vstat" hidden>VISITS: <b data-stat="views">0</b></span><span>NODE: FIELD_01</span></span></section>`;
 }
@@ -7872,6 +8572,15 @@ function renderDesign(){
   document.title = '⚒️ โหมดออกแบบสนาม · ' + D.title;
   scrollTo(0, 0);
 }
+function renderTool(k){
+  window.EBW && EBW.unmountAll(); VOX.stop(); io && io.disconnect();
+  main.innerHTML = `<div id="tlRoot"></div>${footer()}`;
+  TL.render(k, $('#tlRoot'), {D});
+  $('#links').style.display = 'none'; const cr = $('#crumb'); cr.style.display = 'flex';
+  cr.innerHTML = `<a href="#/">HOME</a>&nbsp;/&nbsp;${k === 'tools' ? '' : '<a href="#/tools">TOOLS</a>&nbsp;/&nbsp;'}<b>${TL.title(k)}</b>`;
+  document.title = TL.title(k) + ' · ' + D.title;
+  scrollTo(0, 0);
+}
 function setCrumb(c){
   const cr = $('#crumb'), ln = $('#links');
   if (!c) { cr.style.display = 'none'; ln.style.display = ''; return; }
@@ -7886,6 +8595,8 @@ function route(){
   const [cid, sid] = h.split('/');
   if (!cid || cid === 'sports') { current = null; return renderHome(cid === 'sports' ? 'sports' : null); }
   if (cid === 'design') { if (current !== 'design') { current = 'design'; renderDesign(); } return; }
+  if (cid === 'd' && sid) { current = 'd/' + sid; renderDesign(); FD.loadShared(sid); return; }
+  if (TL.has(cid)) { current = cid; return renderTool(cid); }
   if (cid === current && sid) { const t = document.getElementById(sid); if (t) { t.scrollIntoView(); flash(t); } return; }
   current = cid; renderChapter(cid, sid);
 }
